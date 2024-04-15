@@ -18,7 +18,7 @@
 	const leaf9 = ref("")
 	const leaf10 = ref("")
 
-	onMounted(async () => {
+	onMounted(() => {
 		if (
 			text1.value &&
 			text2.value &&
@@ -26,10 +26,27 @@
 			text4.value &&
 			text5.value
 		) {
-			const textElements = [text1, text2, text3, text4, text5]
+			const textElements = [text1, text2]
 
 			textElements.forEach(textElement => {
-				gsap.to(textElement, {
+				const textElementLetters = Array.from(textElement.value.innerText)
+				textElement.value.innerHTML = textElementLetters
+					.map(letter => `<span>${letter}</span>`)
+					.join("")
+
+				gsap.to(textElement.value.querySelectorAll("span"), {
+					y: -700,
+					stagger: 0.003,
+					scrollTrigger: {
+						trigger: textElement.value,
+						start: "top 600px",
+						end: "bottom top",
+						scrub: 0.2,
+						markers: true,
+					},
+				})
+
+				gsap.to([text3.value, text4.value, text5.value], {
 					y: -700,
 					stagger: 0.002,
 					delay: 10,
@@ -38,7 +55,7 @@
 						start: "bottom 500px",
 						end: "bottom top",
 						scrub: 0.2,
-						// markers: true,
+						markers: true,
 					},
 				})
 			})
@@ -70,9 +87,8 @@
 			]
 
 			leafElements.forEach(leaf => {
-				gsap.to(leaf, {
-					y: 50,
-
+				gsap.to(leaf.value, {
+					y: -100,
 					scrollTrigger: {
 						trigger: leaf.value,
 						start: "bottom 300px",
@@ -87,7 +103,7 @@
 </script>
 
 <template>
-	<article class="hero-image w-screen min-h-screen realtive">
+	<article class="hero-image w-screen min-h-screen relative">
 		<section>
 			<img
 				ref="leaf1"
@@ -194,7 +210,7 @@
 		border-radius: 15px;
 	}
 	.leaf-style {
-		@apply size-4 z-10 absolute;
+		@apply size-4 absolute;
 	}
 </style>
 
