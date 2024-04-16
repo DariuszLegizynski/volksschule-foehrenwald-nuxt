@@ -4,7 +4,7 @@
 
 <template>
 	<nav class="fixed top-0 left-0 right-0 bg-primary bg-opacity-50 z-10 py-2">
-		<ul class="flex justify-between items-center px-1">
+		<section class="flex justify-between items-center px-1">
 			<img
 				src="@/assets/images/hero/logo.png"
 				alt="logo"
@@ -16,23 +16,49 @@
 				@click="isBurgerActive = !isBurgerActive"
 				:active="isBurgerActive"
 			/>
-
-			<!-- <li>
-				<BaseButton variant="transparent"><p>Über Uns</p></BaseButton>
-			</li>
-			<li>
-				<BaseButton variant="transparent"><p>Aktuelles</p></BaseButton>
-			</li>
-			<li>
-				<BaseButton variant="transparent"><p>Photos</p></BaseButton>
-			</li>
-			<li>
-				<BaseButton variant="transparent"><p>Header4</p></BaseButton>
-			</li>
-			<li>
-				<BaseButton variant="transparent"><p>Header5</p></BaseButton>
-			</li> -->
-		</ul>
+		</section>
 	</nav>
+	<aside
+		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-50 w-full py-4"
+		:class="{ '-translate-x-full': !isBurgerActive }"
+	>
+		<ul class="pl-4 flex flex-col items-center">
+			<li class="py-2">
+				<BaseButton
+					variant="transparent"
+					class="text-white font-semibold"
+					><p>Über Uns</p></BaseButton
+				>
+			</li>
+			<li class="py-2">
+				<BaseButton
+					variant="transparent"
+					class="text-white font-semibold"
+					><p>Aktuelles</p></BaseButton
+				>
+			</li>
+			<li class="py-2">
+				<BaseButton
+					variant="transparent"
+					class="text-white font-semibold"
+					><p>Photos</p></BaseButton
+				>
+			</li>
+			<li class="py-2">
+				<BaseButton
+					variant="transparent"
+					class="text-white font-semibold"
+					><p>Sidebar4</p></BaseButton
+				>
+			</li>
+			<li class="py-2">
+				<BaseButton
+					variant="transparent"
+					class="text-white font-semibold"
+					><p>Sidebar5</p></BaseButton
+				>
+			</li>
+		</ul>
+	</aside>
 </template>
 
