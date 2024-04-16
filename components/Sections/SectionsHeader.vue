@@ -5,9 +5,9 @@
 <template>
 	<nav class="fixed top-0 left-0 right-0 bg-primary bg-opacity-50 z-10 py-2">
 		<section class="flex justify-between items-center px-1">
-			<img
-				src="@/assets/images/hero/logo.png"
-				alt="logo"
+			<nuxt-img
+				src="/hero/logo.png"
+				alt="logo Volksschule Föhrenwald"
 				width="6rem"
 				height="2rem"
 				class="w-auto h-10"
