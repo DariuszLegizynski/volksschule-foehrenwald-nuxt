@@ -14,9 +14,9 @@
 			return `${baseClasses} bg-white border-white text-primary hover:bg-primary hover:text-secondary`
 		}
 
-		// if (variant.value === "reverse") {
-		// 	return `${baseClasses} bg-white border-primary text-primary`
-		// }
+		if (variant.value === "transparent") {
+			return "bg-transparent text-tertiary transition ease-in-out pointer hover:text-white"
+		}
 
 		return `${baseClasses} bg-primary border-primary text-white hover:text-secondary`
 	})
