@@ -3,14 +3,14 @@
 </script>
 
 <template>
-	<nav class="fixed top-0 left-0 right-0 bg-primary bg-opacity-50 z-10">
-		<ul class="flex justify-between items-center pl-2">
+	<nav class="fixed top-0 left-0 right-0 bg-primary bg-opacity-50 z-10 py-2">
+		<ul class="flex justify-between items-center px-1">
 			<img
 				src="@/assets/images/hero/logo.png"
 				alt="logo"
 				width="6rem"
 				height="2rem"
-				class="w-auto h-8"
+				class="w-auto h-10"
 			/>
 			<BaseBurger
 				@click="isBurgerActive = !isBurgerActive"

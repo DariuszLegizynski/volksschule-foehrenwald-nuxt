@@ -30,12 +30,12 @@
 	}
 
 	.burger-stick {
-		@apply w-8 h-[0.2rem] bg-white transition-all duration-500 ease-in-out rounded;
+		@apply w-9 h-[0.2rem] bg-white transition-all duration-500 ease-in-out rounded;
 	}
 
 	.burger-stick::before,
 	.burger-stick::after {
-		@apply content-[''] w-8 h-[0.2rem] absolute bg-white transition-all duration-500 ease-in-out rounded;
+		@apply content-[''] w-9 h-[0.2rem] absolute bg-white transition-all duration-500 ease-in-out rounded;
 	}
 
 	.burger-stick::before {
