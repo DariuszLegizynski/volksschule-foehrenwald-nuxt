@@ -19,7 +19,7 @@
 		</section>
 	</nav>
 	<aside
-		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-50 w-full py-4"
+		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-50 w-full py-4 z-10"
 		:class="{ '-translate-x-full': !isBurgerActive }"
 	>
 		<ul class="pl-4 flex flex-col items-center">
