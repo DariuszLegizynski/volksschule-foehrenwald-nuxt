@@ -1,12 +1,8 @@
 <template>
 	<Hero />
-	<div class="min-h-[500rem] relative z-1 bg-primary">
-		<BaseIcons
-			type="swing"
-			fill="white"
-			width="4rem"
-			height="4rem"
-		/>
+	<div class="min-h-[30rem] relative z-1 bg-white">
+		<h1 class="text-primary">Über uns Bereich</h1>
 	</div>
+	<News />
 </template>
 
