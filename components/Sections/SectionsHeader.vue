@@ -6,7 +6,7 @@
 	<nav class="fixed top-0 left-0 right-0 bg-primary bg-opacity-50 z-10 py-2">
 		<section class="flex justify-between items-center px-1">
 			<nuxt-img
-				src="/hero/logo.png"
+				src="/hero/logo-1.png"
 				alt="logo Volksschule Föhrenwald"
 				width="6rem"
 				height="2rem"
@@ -25,35 +25,35 @@
 		<ul class="pl-4 flex flex-col items-center">
 			<li class="py-2">
 				<BaseButton
-					variant="transparent"
+					variant="navbar"
 					class="text-white font-semibold"
 					><p>Über Uns</p></BaseButton
 				>
 			</li>
 			<li class="py-2">
 				<BaseButton
-					variant="transparent"
+					variant="navbar"
 					class="text-white font-semibold"
 					><p>Aktuelles</p></BaseButton
 				>
 			</li>
 			<li class="py-2">
 				<BaseButton
-					variant="transparent"
+					variant="navbar"
 					class="text-white font-semibold"
 					><p>Photos</p></BaseButton
 				>
 			</li>
 			<li class="py-2">
 				<BaseButton
-					variant="transparent"
+					variant="navbar"
 					class="text-white font-semibold"
 					><p>Sidebar4</p></BaseButton
 				>
 			</li>
 			<li class="py-2">
 				<BaseButton
-					variant="transparent"
+					variant="navbar"
 					class="text-white font-semibold"
 					><p>Sidebar5</p></BaseButton
 				>
