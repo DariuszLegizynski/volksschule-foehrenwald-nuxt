@@ -37,6 +37,6 @@ h6,
 
 p,
 .p {
-	@apply text-[1.2rem];
+	@apply text-[1.2rem] leading-none;
 }
 
