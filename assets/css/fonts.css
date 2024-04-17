@@ -1,6 +1,5 @@
 html body {
-	font-family: "Titillium Web", "Trebuchet MS", "Lucida Grande",
-		"Lucida Sans Unicode", "Lucida Sans", "Tahoma", sans-serif;
+	font-family: "Playfair Display", " Times New Roman", "Tahoma", serif;
 
 	/* font smoothing for safari */
 	-webkit-font-smoothing: antialiased;
@@ -12,7 +11,7 @@ h2,
 .h2,
 h3,
 .h3 {
-	/* font-family: "Titillium Web", sans-serif; */
+	font-family: "Playfair Display", serif;
 	font-weight: 700;
 }
 
@@ -22,7 +21,12 @@ h5,
 .h5,
 h6,
 .h6 {
-	/* font-family: "Titillium Web", sans-serif; */
+	font-family: "Playfair Display", serif;
 	font-weight: 600;
+}
+
+p,
+span {
+	font-family: "BDO Grotesk", serif;
 }
 

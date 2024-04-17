@@ -39,11 +39,11 @@
 	}
 
 	.burger-stick::before {
-		transform: translate(0px, -12px);
+		transform: translate(0px, -10px);
 	}
 
 	.burger-stick::after {
-		transform: translate(0px, 12px);
+		transform: translate(0px, 10px);
 	}
 
 	.active {
