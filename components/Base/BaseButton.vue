@@ -12,7 +12,7 @@
 		const baseClasses =
 			"border-2 px-4 py-2 pointer transition ease-in-out rounded-3xl"
 		if (variant.value === "outline") {
-			return `${baseClasses} bg-transparent border-white text-white hover:bg-primary hover:text-secondary`
+			return `${baseClasses} bg-tertiary bg-opacity-30 border-white text-white hover:bg-primary hover:text-secondary`
 		}
 
 		if (variant.value === "navbar") {
