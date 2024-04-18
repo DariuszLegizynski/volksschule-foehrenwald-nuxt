@@ -28,7 +28,9 @@
 				imageWho="Bild von Unsplash"
 			/>
 		</section>
-		<p class="flex flex-col items-center text-white pt-8">Alle Fotos &rarr;</p>
+		<p class="flex flex-col items-center text-white pt-8">
+			Alle Neugkeiten &rarr;
+		</p>
 	</article>
 </template>
 
