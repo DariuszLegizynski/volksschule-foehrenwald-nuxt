@@ -10,7 +10,7 @@
 				alt="logo Volksschule Föhrenwald"
 				width="6rem"
 				height="2rem"
-				class="w-auto h-10"
+				class="w-auto h-10 pl-1"
 			/>
 			<BaseBurger
 				@click="isBurgerActive = !isBurgerActive"
