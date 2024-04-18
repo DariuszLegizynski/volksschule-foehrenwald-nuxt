@@ -1,5 +1,5 @@
 <template>
-	<article class="px-2 pt-16 pb-36 bg-primary">
+	<article class="px-2 py-16 bg-primary">
 		<section class="pb-8">
 			<h1 class="text-white">Neugkeiten</h1>
 			<p class="text-white">Was bei uns los ist?</p>
@@ -28,9 +28,7 @@
 				imageWho="Bild von Unsplash"
 			/>
 		</section>
-		<p class="flex flex-col items-center text-white pt-8">
-			Zu allen Fotos &rarr;
-		</p>
+		<p class="flex flex-col items-center text-white pt-8">Alle Fotos &rarr;</p>
 	</article>
 </template>
 
