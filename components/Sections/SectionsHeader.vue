@@ -3,10 +3,10 @@
 </script>
 
 <template>
-	<nav class="fixed top-0 left-0 right-0 bg-primary bg-opacity-50 z-10 py-2">
-		<section class="flex justify-between items-center px-1">
+	<nav class="fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2">
+		<section class="flex justify-between items-center">
 			<nuxt-img
-				src="/hero/logo-1.png"
+				src="hero/logo-1.png"
 				alt="logo Volksschule Föhrenwald"
 				width="6rem"
 				height="2rem"

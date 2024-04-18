@@ -21,7 +21,7 @@
 
 <template>
 	<article class="hero-image w-screen min-h-screen">
-		<HeroLeaves />
+		<!-- <HeroLeaves /> -->
 		<section
 			ref="heroText"
 			class="h-screen flex flex-col items-center justify-end pb-16 px-2"
