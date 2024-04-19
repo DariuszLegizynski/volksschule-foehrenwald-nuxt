@@ -2,29 +2,38 @@
 	interface Props {
 		title?: string
 		shortDescription?: string
+		date?: string
 		imageSrc?: string
 		imageAlt?: string
 		imageWho?: string
 	}
 
-	const { title, shortDescription, imageSrc, imageAlt, imageWho } =
+	const { title, shortDescription, date, imageSrc, imageAlt, imageWho } =
 		defineProps<Props>()
 </script>
 
 <template>
-	<NuxtLink class="relative w-full">
+	<NuxtLink class="w-full py-4">
 		<nuxt-img
 			:src="imageSrc"
 			:alt="imageAlt"
 			width="6rem"
 			height="8rem"
-			class="w-full h-auto rounded-3xl"
+			class="w-full h-auto"
 		/>
-		<div class="absolute inset-0 bg-black opacity-20 rounded-3xl"></div>
-		<div class="absolute bottom-4 text-white w-full px-2">
-			<div class="h4">{{ title }}</div>
-			<p class="pb-1">{{ shortDescription }}</p>
-			<span class="flex justify-end">{{ imageWho }}</span>
+		<div class="w-full px-2">
+			<div class="flex justify-between py-2 text-tertiary">
+				<span>{{ date }}</span>
+				<span>{{ imageWho }}</span>
+			</div>
+			<div class="h4 text-primary">{{ title }}</div>
+			<p class="py-4 text-tertiary leading-6">{{ shortDescription }}</p>
+		</div>
+		<div
+			class="flex justify-between items-end pt-3 mt-4 border-t-[1px] border-tertiary px-2"
+		>
+			<p class="text-black">Zum Beitrag</p>
+			<p>&rarr;</p>
 		</div>
 	</NuxtLink>
 </template>

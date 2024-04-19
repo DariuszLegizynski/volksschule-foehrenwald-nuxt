@@ -21,12 +21,12 @@
 
 <template>
 	<article class="hero-image w-screen min-h-screen">
-		<!-- <HeroLeaves /> -->
+		<HeroLeaves />
 		<section
 			ref="heroText"
 			class="h-screen flex flex-col items-center justify-end pb-16 px-2"
 		>
-			<div class="px-2">
+			<div class="px-2 pb-2 bg-tertiary bg-opacity-30">
 				<h1 class="text-style text-shadow">Volksschule</h1>
 				<h1 class="text-style text-shadow">Föhrenwald</h1>
 				<p class="text-style text-shadow pt-2">
