@@ -40,7 +40,7 @@
 		</div>
 	</NuxtLink>
 	<NuxtLink
-		v-if="variant === 'comic-white'"
+		v-else-if="variant === 'comic-white'"
 		to="/"
 		class="flex flex-col items-center justify-center px-0 py-0 size-fit bg-primary border-0 border-l-2 border-b-2 border-white relative rounded-lg"
 	>
