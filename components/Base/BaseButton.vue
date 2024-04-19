@@ -32,7 +32,6 @@
 		v-if="variant === 'comic'"
 		to="/"
 		class="flex flex-col items-center justify-center px-0 py-0 size-fit bg-white border-0 border-l-2 border-b-2 border-primary relative rounded-lg"
-		:class="classes"
 	>
 		<div
 			class="border-2 border-primary py-2 px-2 text-white bg-primary rounded-lg uppercase font-bold tracking-wider transform translate-x-1 -translate-y-1"
