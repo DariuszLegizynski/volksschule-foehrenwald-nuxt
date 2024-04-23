@@ -1,7 +1,8 @@
 <template>
 	<article>
-		<SectionsHeader />
+		<SectionHeader />
 		<slot></slot>
+		<SectionFooter />
 	</article>
 </template>
 
