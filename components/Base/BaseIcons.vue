@@ -4,12 +4,14 @@
 		width?: string
 		height?: string
 		fill?: string
+		stroke?: string
 	}
 
 	const {
 		width = "24px",
 		height = "24px",
 		fill = "white",
+		stroke = "black",
 	} = defineProps<Props>()
 </script>
 
@@ -229,58 +231,6 @@
 			stroke-width="3"
 			d="M758.267 975V741.883"
 		/>
-	</svg>
-	<svg
-		v-if="type === 'phone'"
-		:width="width"
-		:height="height"
-		:fill="fill"
-		stroke="#000"
-		stroke-linecap="round"
-		viewBox="0 0 24 24"
-	>
-		<path d="M3.8 12.2 9 9 8 2H2v3a17 17 0 0 0 17 17h3v-6l-7-1-3.2 5.2" />
-	</svg>
-	<svg
-		v-if="type === 'email'"
-		:width="width"
-		:height="height"
-		:fill="fill"
-		stroke="#000"
-		stroke-linecap="round"
-		viewBox="0 0 24 24"
-	>
-		<rect
-			width="20"
-			height="16"
-			x="2"
-			y="4"
-			rx="0"
-		/>
-		<path d="m2 7 10 7 10-7" />
-	</svg>
-	<svg
-		v-if="type === 'map'"
-		:width="width"
-		:height="height"
-		:fill="fill"
-		stroke="#000"
-		stroke-linecap="round"
-		viewBox="0 0 24 24"
-	>
-		<path d="m22 19-6 3-8-3-6 3V5l6-3 8 3 6-3v17zM8 2v17M16 5v17" />
-	</svg>
-	<svg
-		v-if="type === 'home'"
-		:width="width"
-		:height="height"
-		:fill="fill"
-		stroke="#000"
-		stroke-linecap="round"
-		viewBox="0 0 24 24"
-	>
-		<path d="m2 10 10-8 10 8" />
-		<path d="M4 8.5V22h16V8.5" />
 	</svg>
 </template>
 
