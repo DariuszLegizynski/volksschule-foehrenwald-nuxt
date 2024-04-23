@@ -24,7 +24,7 @@
 		<HeroLeaves />
 		<section
 			ref="heroText"
-			class="h-screen flex flex-col items-center justify-end pb-16 px-2"
+			class="h-screen flex flex-col items-center justify-end pb-16"
 		>
 			<div class="px-2 pb-2 bg-tertiary bg-opacity-30">
 				<h1 class="text-style text-shadow">Volksschule</h1>

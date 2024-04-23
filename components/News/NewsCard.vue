@@ -19,7 +19,7 @@
 			:alt="imageAlt"
 			width="6rem"
 			height="8rem"
-			class="w-full h-auto"
+			class="w-full h-auto sm:object-cover sm:h-[16rem]"
 		/>
 		<div class="w-full px-2">
 			<div class="flex justify-between py-2 text-tertiary">
