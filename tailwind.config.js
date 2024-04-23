@@ -17,6 +17,11 @@ export default {
 				black: "hsl(5, 0%, 0%)",
 				white: "hsl(5, 0%, 100%)",
 			},
+			screens: {
+				xxs: "375px",
+				xs: "425px",
+				"3xl": "1920px",
+			},
 		},
 	},
 	plugins: [],
