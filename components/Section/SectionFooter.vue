@@ -1,5 +1,6 @@
 <template>
 	<footer class="px-8 py-16">
+		<h1 class="pb-8">Kontakt:</h1>
 		<h1 class="pb-8">Kontaktiere uns:</h1>
 		<section class="grid grid-cols-1 gap-y-4">
 			<div class="flex gap-x-4 items-center">
