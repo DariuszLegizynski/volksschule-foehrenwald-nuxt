@@ -21,7 +21,7 @@
 			height="8rem"
 			class="w-full h-auto sm:object-cover sm:h-[16rem]"
 		/>
-		<div class="w-full px-2">
+		<div class="w-full px-2 min-h-44">
 			<div class="flex justify-between py-2 text-tertiary">
 				<span>{{ date }}</span>
 				<span>{{ imageWho }}</span>

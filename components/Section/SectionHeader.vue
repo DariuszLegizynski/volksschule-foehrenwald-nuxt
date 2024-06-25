@@ -6,17 +6,8 @@
 	<nav class="fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2">
 		<section class="max-w-[80rem] mx-auto">
 			<section class="flex !justify-between items-center">
-				<nuxt-img
-					src="hero/logo-1.png"
-					alt="logo Volksschule Föhrenwald"
-					width="6rem"
-					height="2rem"
-					class="w-auto h-10 pl-1"
-				/>
-				<BaseBurger
-					@click="isBurgerActive = !isBurgerActive"
-					:active="isBurgerActive"
-				/>
+				<NuxtImg src="/images/hero/logo-1.png" alt="logo Volksschule Föhrenwald" width="6rem" height="2rem" class="w-auto h-10 pl-1" />
+				<BaseBurger @click="isBurgerActive = !isBurgerActive" :active="isBurgerActive" />
 			</section>
 		</section>
 	</nav>
@@ -26,41 +17,20 @@
 	>
 		<ul class="pl-4 flex flex-col items-center">
 			<li class="py-2">
-				<BaseButton
-					variant="navbar"
-					class="text-white font-semibold"
-					><p>Über Uns</p></BaseButton
-				>
+				<BaseButton variant="navbar" class="text-white font-semibold"><p>Über Uns</p></BaseButton>
 			</li>
 			<li class="py-2">
-				<BaseButton
-					variant="navbar"
-					class="text-white font-semibold"
-					><p>Aktuelles</p></BaseButton
-				>
+				<BaseButton variant="navbar" class="text-white font-semibold"><p>Aktuelles</p></BaseButton>
 			</li>
 			<li class="py-2">
-				<BaseButton
-					variant="navbar"
-					class="text-white font-semibold"
-					><p>Photos</p></BaseButton
-				>
+				<BaseButton variant="navbar" class="text-white font-semibold"><p>Photos</p></BaseButton>
 			</li>
 			<li class="py-2">
-				<BaseButton
-					variant="navbar"
-					class="text-white font-semibold"
-					><p>Sidebar4</p></BaseButton
-				>
+				<BaseButton variant="navbar" class="text-white font-semibold"><p>Sidebar4</p></BaseButton>
 			</li>
 			<li class="py-2">
-				<BaseButton
-					variant="navbar"
-					class="text-white font-semibold"
-					><p>Sidebar5</p></BaseButton
-				>
+				<BaseButton variant="navbar" class="text-white font-semibold"><p>Sidebar5</p></BaseButton>
 			</li>
 		</ul>
 	</aside>
 </template>
-

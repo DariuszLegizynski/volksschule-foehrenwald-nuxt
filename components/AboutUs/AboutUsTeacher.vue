@@ -1,0 +1,21 @@
+<script setup lang="ts">
+	interface Props {
+		link: string
+		alternativeText: string
+	}
+
+	const { link, alternativeText } = defineProps<Props>()
+</script>
+
+<template>
+	<li class="min-w-48">
+		<NuxtImg fit="cover" loading="lazy" class="object-center w-full h-auto" width="1200" height="1600" :src="link" :alt="alternativeText" />
+		<section class="pt-4 pl-4">
+			<span class="leading-6 font-semibold text-lg">Name Nachname</span>
+			<br />
+			<span class="py-1 after:content-[',']">Beschreibung der Position</span>
+			<br />
+			<span>Weitere Beschreibung</span>
+		</section>
+	</li>
+</template>

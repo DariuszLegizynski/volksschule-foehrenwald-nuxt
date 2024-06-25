@@ -1,5 +1,5 @@
 <template>
-	<article class="px-2 py-16">
+	<article id="news" class="px-2 py-16">
 		<div class="centered-container">
 			<section class="pb-8">
 				<h1 class="text-primary">Neugkeiten</h1>
@@ -38,4 +38,3 @@
 		</div>
 	</article>
 </template>
-

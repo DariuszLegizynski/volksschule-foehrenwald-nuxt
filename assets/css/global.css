@@ -2,3 +2,6 @@
 	@apply flex flex-col items-center max-w-[80rem] mx-auto;
 }
 
+html {
+	scroll-behavior: smooth;
+}
