@@ -1,7 +1,7 @@
 <template>
-	<article class="mt-32 px-4 mdcentered-container overflow-hidden">
-		<section>
-			<div class="pb-16">
+	<article class="mt-32 mdcentered-container overflow-hidden">
+		<section class="px-4">
+			<div class="pb-16 text-primary">
 				<div class="h4">Unsere Leidenschaft gilt dem lächeln,</div>
 				<div class="h4">dass wir auf den Gesichtern unserer Kinder sehen.</div>
 			</div>
@@ -10,9 +10,9 @@
 				Lehrnen durch Abenteuer, spaß und rücksicht auf andere nehmen. Und noch etwas dazuschreiben, damit es hier gut aussieht und nicht so lehr ist.
 			</p>
 		</section>
-		<section class="grid">
-			<h2 class="h2 py-8">Unser Team</h2>
-			<ul class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-4">
+		<section class="grid pb-32 px-4">
+			<h2 class="pt-16 pb-8 text-primary">Unser Team</h2>
+			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12">
 				<AboutUsTeacher link="/images/about/teacher/Ulrike_Menitz_BEd_Direktorin.jpg" alternativeText="nice looking teacher" />
 				<AboutUsTeacher link="/images/about/teacher/Barbara_Marchhart_BEd_Klassenlehrerin_A_Klasse.jpg" alternativeText="nice looking teacher" />
 				<AboutUsTeacher link="/images/about/teacher/Thomas_Metzenbauer_BEd_Integrationslehrer.jpg" alternativeText="nice looking teacher" />
@@ -25,24 +25,57 @@
 				<AboutUsTeacher link="/images/about/teacher/Julia_Frank_Stützkraft.jpg" alternativeText="nice looking teacher" />
 			</ul>
 		</section>
-		<section>
-			<h2 class="h2 py-8">Unsere Kinder</h2>
-			<ul class="grid gap-16">
-				<AboutUsClass link="/images/about/classes/Klassenfoto_A.jpg" alternativeText="nice looking class" />
-				<AboutUsClass link="/images/about/classes/Klassenfoto_B.jpg" alternativeText="nice looking class" />
-				<AboutUsClass link="/images/about/classes/Klassenfoto_C.jpg" alternativeText="nice looking class" />
-				<AboutUsClass link="/images/about/classes/Klassenfoto_D.jpg" alternativeText="nice looking class" />
-			</ul>
+		<section class="bg-primary pb-16">
+			<div class="px-4">
+				<h2 class="h2 pt-20 pb-16 text-white">Unsere Kinder</h2>
+				<ul class="grid gap-16">
+					<AboutUsClass link="/images/about/classes/Klassenfoto_A.jpg" alternativeText="nice looking class" />
+					<AboutUsClass link="/images/about/classes/Klassenfoto_B.jpg" alternativeText="nice looking class" />
+					<AboutUsClass link="/images/about/classes/Klassenfoto_C.jpg" alternativeText="nice looking class" />
+					<AboutUsClass link="/images/about/classes/Klassenfoto_D.jpg" alternativeText="nice looking class" />
+				</ul>
+			</div>
+			<div class="flex flex-col items-center pt-16 px-4">
+				<BaseButton variant="comic-white">&larr; Zurück</BaseButton>
+			</div>
 		</section>
-		<div class="flex flex-col items-center py-16">
-			<BaseButton>&larr;Zurück</BaseButton>
-		</div>
 	</article>
 </template>
 
-<style scoped>
-	ul > :nth-child(even) {
-		/* @apply translate-y-10; */
+<style>
+	#teacher > :nth-child(even) {
 		@apply mt-10;
+	}
+	ul > * {
+		scrollbar-width: thin;
+		scrollbar-color: hsl(70, 50%, 31%) #dfe9eb;
+	}
+	ul::-webkit-scrollbar {
+		width: 10px;
+	}
+	ul::-webkit-scrollbar-track {
+		border-radius: 5px;
+		background-color: hsl(70, 70%, 46%);
+	}
+
+	ul::-webkit-scrollbar-track:hover {
+		background-color: hsl(70, 70%, 46%);
+	}
+
+	ul::-webkit-scrollbar-track:active {
+		background-color: hsl(70, 70%, 46%);
+	}
+
+	ul::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: hsl(70, 50%, 31%);
+	}
+
+	ul::-webkit-scrollbar-thumb:hover {
+		background-color: hsl(70, 50%, 31%);
+	}
+
+	ul::-webkit-scrollbar-thumb:active {
+		background-color: hsl(70, 50%, 31%);
 	}
 </style>

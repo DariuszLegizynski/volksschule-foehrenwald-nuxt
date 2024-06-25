@@ -9,9 +9,9 @@
 
 <template>
 	<li>
-		<NuxtImg fit="cover" loading="lazy" class="object-center w-full h-auto" width="800" height="600" :src="link" :alt="alternativeText" />
-		<section class="py-4 pl-4">
-			<span class="leading-6 font-semibold text-lg">Klasse Z</span>
+		<NuxtImg fit="cover" loading="lazy" class="rounded-3xl object-center w-full h-auto" width="1600" height="1200" :src="link" :alt="alternativeText" />
+		<section class="pt-4 pb-12 pl-4 text-white border-b-2 border-white">
+			<div class="h4">Klasse Z</div>
 			<br />
 			<span class="py-1 after:content-[',']">Irgendeine Beschreibung</span>
 			<br />

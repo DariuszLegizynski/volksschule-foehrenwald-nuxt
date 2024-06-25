@@ -17,7 +17,7 @@
 	>
 		<ul class="pl-4 flex flex-col items-center">
 			<li class="py-2">
-				<BaseButton variant="navbar" class="text-white font-semibold"><p>Über Uns</p></BaseButton>
+				<BaseButton link="/about" variant="navbar" class="text-white font-semibold"><p>Über Uns</p></BaseButton>
 			</li>
 			<li class="py-2">
 				<BaseButton variant="navbar" class="text-white font-semibold"><p>Aktuelles</p></BaseButton>

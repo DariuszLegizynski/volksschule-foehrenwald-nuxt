@@ -1,10 +1,10 @@
 <template>
 	<article id="about-us" class="relative z-1 bg-white flex flex-col items-center text-primary py-16 px-4 gap-y-8">
 		<div class="centered-container">
-			<h1>Über uns</h1>
+			<h1 class="pt-4 pb-12">Über uns</h1>
 			<section class="lg:grid lg:grid-cols-3 lg:gap-x-8">
-				<section>
-					<div class="flex flex-col items-center pb-4">
+				<section class="pb-16">
+					<div class="flex flex-col items-center pb-12">
 						<AnimationFitness width="8rem" height="8rem" />
 						<div class="h4 text-center pb-2">Bewegung</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
@@ -14,8 +14,8 @@
 						veniam, dignissimos labore ut repellendus animi minima ipsum eos cum. Illum?</span
 					>
 				</section>
-				<section>
-					<div class="flex flex-col items-center pb-4">
+				<section class="pb-16">
+					<div class="flex flex-col items-center pb-12">
 						<AnimationSocial width="8rem" height="8rem" />
 						<div class="h4 text-center pb-2">Soziales lernen</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
@@ -26,7 +26,7 @@
 					>
 				</section>
 				<section>
-					<div class="flex flex-col items-center pb-4">
+					<div class="flex flex-col items-center pb-12">
 						<BaseIcons type="date" width="8rem" height="8rem" />
 						<BaseIcons type="eko" width="8rem" height="8rem" />
 						<div class="h4 text-center pb-2">Ökologie</div>

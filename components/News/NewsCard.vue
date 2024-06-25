@@ -14,7 +14,7 @@
 
 <template>
 	<NuxtLink class="w-full py-4">
-		<nuxt-img
+		<NuxtImg
 			:src="imageSrc"
 			:alt="imageAlt"
 			width="6rem"
