@@ -40,7 +40,9 @@
 
 <style scoped>
 	.hero-image {
-		background: url(/images/hero/modern_school_4.png) no-repeat center center/auto fixed;
+		background-image: url(/images/hero/hero-1-subtle.png);
+		background-size: cover;
+		background-position: 55% 0;
 	}
 	.text-border {
 		text-shadow: -1.4px 0 hsl(70, 70%, 46%), 0 1.4px hsl(70, 70%, 46%), 1.4px 0 hsl(70, 70%, 46%), 0 -1.4px hsl(70, 70%, 46%);

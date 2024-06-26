@@ -26,7 +26,7 @@
 			return `${baseClasses} bg-transparent border-primary text-white hover:text-secondary`
 		}
 
-		return `${baseClasses} bg-primary border-primary text-white hover:text-secondary`
+		return `${baseClasses} bg-primary border-white text-white hover:text-secondary`
 	})
 </script>
 
