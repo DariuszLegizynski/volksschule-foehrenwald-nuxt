@@ -1,6 +1,6 @@
 <template>
-	<article class="mt-32 mdcentered-container overflow-hidden">
-		<section class="px-4">
+	<article class="mt-32 overflow-hidden">
+		<section class="px-4 md-centered-container">
 			<div class="pb-16 text-primary">
 				<div class="h4">Unsere Leidenschaft gilt dem lächeln,</div>
 				<div class="h4">dass wir auf den Gesichtern unserer Kinder sehen.</div>
@@ -10,9 +10,9 @@
 				Lehrnen durch Abenteuer, spaß und rücksicht auf andere nehmen. Und noch etwas dazuschreiben, damit es hier gut aussieht und nicht so lehr ist.
 			</p>
 		</section>
-		<section class="grid pb-32 px-4">
+		<section class="grid pb-32 px-4 md:px-1 md-centered-container lg:px-4">
 			<h2 class="pt-16 pb-8 text-primary">Unser Team</h2>
-			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12">
+			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12 md:grid md:grid-cols-4">
 				<AboutUsTeacher link="/images/about/teacher/Ulrike_Menitz_BEd_Direktorin.jpg" alternativeText="nice looking teacher" />
 				<AboutUsTeacher link="/images/about/teacher/Barbara_Marchhart_BEd_Klassenlehrerin_A_Klasse.jpg" alternativeText="nice looking teacher" />
 				<AboutUsTeacher link="/images/about/teacher/Thomas_Metzenbauer_BEd_Integrationslehrer.jpg" alternativeText="nice looking teacher" />
@@ -26,7 +26,7 @@
 			</ul>
 		</section>
 		<section class="bg-primary pb-16">
-			<div class="px-4">
+			<div class="px-4 md-centered-container">
 				<h2 class="h2 pt-20 pb-16 text-white">Unsere Kinder</h2>
 				<ul class="grid gap-16">
 					<AboutUsClass link="/images/about/classes/Klassenfoto_A.jpg" alternativeText="nice looking class" />
@@ -43,6 +43,9 @@
 </template>
 
 <style>
+	.md-centered-container {
+		@apply md:flex md:flex-col md:items-center md:max-w-[80rem] md:mx-auto;
+	}
 	#teacher > :nth-child(even) {
 		@apply mt-10;
 	}
