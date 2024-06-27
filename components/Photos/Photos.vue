@@ -1,11 +1,10 @@
 <template>
 	<article class="px-2 py-16 bg-primary">
 		<div class="centered-container">
-			<section class="pb-8">
+			<section class="pb-8 pl-4">
 				<h1 class="text-white">Unsere Abenteuer</h1>
 				<p class="text-white pt-4">auf Bildern</p>
 			</section>
-
 			<section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				<PhotosCard
 					title="Schwimmen"

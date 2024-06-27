@@ -5,7 +5,6 @@
 				<h1 class="text-primary">Neugkeiten</h1>
 				<p class="pt-4">Was bei uns los ist</p>
 			</section>
-
 			<section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				<NewsCard
 					title="Unser Schwimmbad"

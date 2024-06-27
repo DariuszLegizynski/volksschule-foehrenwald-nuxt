@@ -24,10 +24,10 @@
 	}
 
 	onMounted(() => {
-		mm.add("(min-width: 786px)", () => {
+		mm.add("(min-width: 768px)", () => {
 			teacherRefs.value.forEach((teacher, index) => {
 				const direction = index % 2 === 0 ? 1 : -1
-				console.log({ teacher })
+
 				gsap.fromTo(
 					teacher,
 					{
@@ -41,7 +41,6 @@
 							start: "top center",
 							end: "bottom top",
 							scrub: true,
-							markers: true,
 						},
 					}
 				)
@@ -57,14 +56,13 @@
 				<div class="h4">Unsere Leidenschaft gilt dem lächeln,</div>
 				<div class="h4">dass wir auf den Gesichtern unserer Kinder sehen.</div>
 			</div>
-
-			<p class="leading-8">
+			<p class="leading-8 max-w-[39rem] mx-auto">
 				Lehrnen durch Abenteuer, spaß und rücksicht auf andere nehmen. Und noch etwas dazuschreiben, damit es hier gut aussieht und nicht so lehr ist.
 			</p>
 		</section>
 		<section class="grid pb-32 px-4 md:px-1 md-centered-container lg:px-4">
 			<h2 class="pt-16 pb-8 text-primary">Unser Team</h2>
-			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12 md:grid md:grid-cols-4">
+			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12 md:grid md:grid-cols-4 md:overflow-x-hidden">
 				<AboutUsTeacher
 					v-for="(teacher, index) in teachers"
 					:key="index"
