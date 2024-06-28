@@ -1,13 +1,8 @@
 <script setup lang="ts">
 	import gsap from "gsap"
-	import { onMounted, ref } from "vue"
+	let mm = gsap.matchMedia()
 
-	interface Teacher {
-		link: string
-		alternativeText: string
-	}
-
-	const teachers: Teacher[] = [
+	const teachers = [
 		{ link: "/images/about/teacher/Ulrike_Menitz_BEd_Direktorin.jpg", alternativeText: "nice looking teacher" },
 		{ link: "/images/about/teacher/Barbara_Marchhart_BEd_Klassenlehrerin_A_Klasse.jpg", alternativeText: "nice looking teacher" },
 		{ link: "/images/about/teacher/Thomas_Metzenbauer_BEd_Integrationslehrer.jpg", alternativeText: "nice looking teacher" },
@@ -20,37 +15,37 @@
 		{ link: "/images/about/teacher/Julia_Frank_Stützkraft.jpg", alternativeText: "nice looking teacher" },
 	]
 
-	const columns: Teacher[][] = Array.from({ length: 4 }, () => [])
-	teachers.forEach((teacher, index) => {
-		columns[index % 4].push(teacher)
-	})
+	const teacherRefs = ref<HTMLElement[]>([])
 
-	const columnRefs = ref<HTMLElement[][]>(Array.from({ length: 4 }, () => []))
-
-	const assignTeacherRef = (columnIndex: number, ref: Element | ComponentPublicInstance | null) => {
+	const assignTeacherRef = (ref: Element | ComponentPublicInstance | null) => {
 		if (ref instanceof HTMLElement) {
-			columnRefs.value[columnIndex].push(ref)
+			teacherRefs.value.push(ref)
 		}
 	}
 
 	onMounted(() => {
-		const columnElements = gsap.utils.toArray(".column") as HTMLElement[]
-		columnElements.forEach((column, index) => {
-			const direction = index % 2 === 0 ? 1 : -1
-			gsap.fromTo(
-				column,
-				{ y: 0 },
-				{
-					y: () => `${direction * 100}px`,
-					ease: "none",
-					scrollTrigger: {
-						trigger: column,
-						start: "top center",
-						end: "bottom top",
-						scrub: true,
+		mm.add("(min-width: 768px)", () => {
+			teacherRefs.value.forEach((teacher, index) => {
+				const direction = index % 2 === 0 ? 1 : -1
+
+				gsap.fromTo(
+					teacher,
+					{
+						y: 0,
 					},
-				}
-			)
+					{
+						y: () => `${direction * 50}px`,
+						ease: "none",
+						scrollTrigger: {
+							trigger: teacher,
+							start: "top center",
+							end: "bottom top",
+							scrub: true,
+							markers: true,
+						},
+					}
+				)
+			})
 		})
 	})
 </script>
@@ -59,26 +54,23 @@
 	<article class="mt-32 overflow-hidden">
 		<section class="px-4 md-centered-container">
 			<div class="pb-16 text-primary">
-				<div class="h4">Unsere Leidenschaft gilt dem lächeln,</div>
-				<div class="h4">dass wir auf den Gesichtern unserer Kinder sehen.</div>
+				<div class="h3">Unsere Leidenschaft gilt dem lächeln,</div>
+				<div class="h3">dass wir auf den Gesichtern unserer Kinder sehen.</div>
 			</div>
-			<p class="leading-8 max-w-[39rem] mx-auto">
+			<p class="max-w-[39rem] mx-auto">
 				Lehrnen durch Abenteuer, spaß und rücksicht auf andere nehmen. Und noch etwas dazuschreiben, damit es hier gut aussieht und nicht so lehr ist.
 			</p>
 		</section>
 		<section class="grid pb-32 px-4 md:px-1 md-centered-container lg:px-4">
 			<h2 class="pt-16 pb-8 text-primary">Unser Team</h2>
-			<ul class="grid grid-cols-1 md:grid-cols-4 gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12">
-				<div v-for="(column, columnIndex) in columns" :key="columnIndex" class="flex flex-col gap-y-10 column">
-					<AboutUsTeacher
-						v-for="(teacher, index) in column"
-						:key="index"
-						:link="teacher.link"
-						:alternativeText="teacher.alternativeText"
-						:assignRef="assignTeacherRef"
-						:columnIndex="columnIndex"
-					/>
-				</div>
+			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12 md:grid md:grid-cols-4 md:overflow-x-hidden">
+				<AboutUsTeacher
+					v-for="(teacher, index) in teachers"
+					:key="index"
+					:link="teacher.link"
+					:alternativeText="teacher.alternativeText"
+					:assignRef="assignTeacherRef"
+				/>
 			</ul>
 		</section>
 		<section class="bg-primary pb-16">

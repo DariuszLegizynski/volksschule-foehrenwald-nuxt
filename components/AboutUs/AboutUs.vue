@@ -1,12 +1,12 @@
 <template>
 	<article id="about-us" class="relative z-1 bg-white flex flex-col items-center text-primary py-16 px-4 gap-y-8">
 		<div class="centered-container">
-			<h1 class="pt-4 pb-12">Über uns</h1>
+			<h2 class="pt-4 pb-12">Über uns</h2>
 			<section class="lg:grid lg:grid-cols-3 lg:gap-x-8">
 				<section class="pb-16">
 					<div class="flex flex-col items-center pb-12">
 						<AnimationFitness width="8rem" height="8rem" />
-						<div class="h4 text-center pb-2">Bewegung</div>
+						<div class="h3 text-center pb-2">Bewegung</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
 					</div>
 					<span class="text-black"
@@ -17,7 +17,7 @@
 				<section class="pb-16">
 					<div class="flex flex-col items-center pb-12">
 						<AnimationSocial width="8rem" height="8rem" />
-						<div class="h4 text-center pb-2">Soziales lernen</div>
+						<div class="h3 text-center pb-2">Soziales lernen</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
 					</div>
 					<span class="text-black"
@@ -29,7 +29,7 @@
 					<div class="flex flex-col items-center pb-12">
 						<BaseIcons type="date" width="8rem" height="8rem" />
 						<BaseIcons type="eko" width="8rem" height="8rem" />
-						<div class="h4 text-center pb-2">Ökologie</div>
+						<div class="h3 text-center pb-2">Ökologie</div>
 
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
 					</div>
@@ -40,6 +40,6 @@
 				</section>
 			</section>
 		</div>
-		<BaseButton class="mt-8" link="/about" variant="comic">über uns &rarr;</BaseButton>
+		<BaseButton class="mt-8" link="/about" variant="comic"><p>über uns &rarr;</p></BaseButton>
 	</article>
 </template>

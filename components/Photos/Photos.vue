@@ -1,8 +1,8 @@
 <template>
 	<article class="px-2 py-16 bg-primary">
 		<div class="centered-container">
-			<section class="pb-8 pl-4">
-				<h1 class="text-white">Unsere Abenteuer</h1>
+			<section class="pb-8 pl-4 md:pb-16">
+				<h2 class="text-white">Unsere Abenteuer</h2>
 				<p class="text-white pt-4">auf Bildern</p>
 			</section>
 			<section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -28,8 +28,8 @@
 					imageWho="Bild von Unsplash"
 				/>
 			</section>
-			<section class="flex justify-center pt-16">
-				<BaseButton variant="comic-white">Alle Fotos &rarr;</BaseButton>
+			<section class="flex justify-center pt-16 md:pt-32 md:pb-16">
+				<BaseButton variant="comic-white"><p>Alle Fotos &rarr;</p></BaseButton>
 			</section>
 		</div>
 	</article>

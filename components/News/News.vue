@@ -1,8 +1,8 @@
 <template>
 	<article id="news" class="px-2 py-16">
 		<div class="centered-container">
-			<section class="pb-8">
-				<h1 class="text-primary">Neugkeiten</h1>
+			<section class="pb-8 md:pb-16">
+				<h2 class="text-primary">Neugkeiten</h2>
 				<p class="pt-4">Was bei uns los ist</p>
 			</section>
 			<section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -31,8 +31,8 @@
 					imageWho="Bild von Unsplash"
 				/>
 			</section>
-			<section class="flex justify-center mt-16">
-				<BaseButton variant="comic">Alle Neugkeiten &rarr;</BaseButton>
+			<section class="flex justify-center mt-16 md:mt-24 md:mb-24">
+				<BaseButton variant="comic"><p>Alle Neugkeiten &rarr;</p></BaseButton>
 			</section>
 		</div>
 	</article>
