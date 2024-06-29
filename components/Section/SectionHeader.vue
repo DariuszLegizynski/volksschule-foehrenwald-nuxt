@@ -7,7 +7,7 @@
 </script>
 
 <template>
-	<nav class="fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2">
+	<nav class="fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2 md:hidden">
 		<section class="max-w-[80rem] mx-auto">
 			<section class="flex !justify-between items-center">
 				<NuxtLink to="/">
@@ -18,10 +18,10 @@
 		</section>
 	</nav>
 	<aside
-		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-50 w-full py-4 z-10"
+		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-50 w-full py-4 z-10 md:hidden"
 		:class="{ '-translate-x-full': !isBurgerActive }"
 	>
-		<ul class="pl-4 flex flex-col items-center">
+		<ul class="pl-4 flex flex-col items-center md:flex-row">
 			<li class="py-2">
 				<BaseButton link="/about" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Über Uns</p></BaseButton>
 			</li>

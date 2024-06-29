@@ -30,7 +30,7 @@
 				<div class="p text-style text-shadow pt-2 md:pt-6">Mit uns wird ihr Kind<br />abenteuerlich gelehrt:</div>
 				<div class="p text-style text-shadow pt-2 md:pt-6">Bewegung - Soziales Lernen - Ökologie</div>
 			</div>
-			<div class="grid grid-cols-2 gap-x-4 mt-16 lg:gap-x-16">
+			<div class="grid grid-cols-2 gap-x-4 md:gap-x-12 mt-16 lg:gap-x-16">
 				<BaseButton link="#about-us"><p>Über Uns</p></BaseButton>
 				<BaseButton link="#news" variant="outline"><p>Aktuelles</p></BaseButton>
 			</div>

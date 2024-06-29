@@ -11,10 +11,7 @@
 
 <template>
 	<div class="burger">
-		<div
-			class="burger-stick"
-			:class="{ active }"
-		/>
+		<div class="burger-stick" :class="{ active }" />
 	</div>
 </template>
 
@@ -58,4 +55,3 @@
 		@apply rotate-[-45deg];
 	}
 </style>
-
