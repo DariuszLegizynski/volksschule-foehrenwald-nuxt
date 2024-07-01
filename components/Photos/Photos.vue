@@ -29,7 +29,7 @@
 				/>
 			</section>
 			<section class="flex justify-center pt-16 md:pt-32 md:pb-16">
-				<BaseButton variant="comic-white"><p>Alle Fotos &rarr;</p></BaseButton>
+				<BaseButton link="/fotoGallery" variant="comic-white"><p>Alle Fotos &rarr;</p></BaseButton>
 			</section>
 		</div>
 	</article>
