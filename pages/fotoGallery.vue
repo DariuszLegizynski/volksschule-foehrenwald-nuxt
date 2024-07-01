@@ -2,7 +2,6 @@
 	import type { FotoGallery } from "@/types/Fotos"
 
 	const config = useRuntimeConfig()
-
 	const strapiBaseUrl = config.public.strapi.url
 
 	const { find } = useStrapi()
@@ -30,14 +29,15 @@
 				<PhotosCard
 					v-for="fotoGallery in fotoGalleries"
 					:key="fotoGallery.id"
+					:slug="fotoGallery.attributes?.slug"
 					:title="fotoGallery.attributes?.title || 'No Title'"
 					:shortDescription="fotoGallery.attributes?.description || 'No Description'"
 					:imageSrc="
-						fotoGallery.attributes?.coverImage?.data?.attributes?.url
-							? `${strapiBaseUrl}${fotoGallery.attributes.coverImage.data.attributes.url}`
+						fotoGallery.attributes?.coverImage?.data?.attributes?.formats.medium.url
+							? `${strapiBaseUrl}${fotoGallery.attributes.coverImage.data.attributes.formats.medium.url}`
 							: '/images/diverse/classmates-friends-bag-school-education.jpg'
 					"
-					:imageAlt="fotoGallery.attributes?.coverImage?.data?.attributes?.alternativeText || 'No Alt Text'"
+					:imageAlt="fotoGallery.attributes?.coverImage?.data?.attributes?.alternativeText || 'School children on adventure'"
 				/>
 			</div>
 		</section>
