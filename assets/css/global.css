@@ -1,5 +1,5 @@
 .centered-container {
-	@apply flex flex-col items-center max-w-[80rem] mx-auto lg:max-w-[96rem];
+	@apply flex flex-col items-center max-w-[80rem] mx-auto 2xl:max-w-[96rem];
 }
 
 html {

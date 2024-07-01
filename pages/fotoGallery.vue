@@ -21,12 +21,12 @@
 </script>
 
 <template>
-	<article class="mt-32 px-2">
+	<article class="mt-32 px-2 centered-container">
 		<h1 class="text-primary pb-16">Unsere Abenteuer</h1>
 		<section>
 			<div v-if="pending">Loading...</div>
 			<div v-if="error">Error: {{ error.message }}</div>
-			<div v-if="fotoGalleries" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			<div v-if="fotoGalleries" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
 				<PhotosCard
 					v-for="fotoGallery in fotoGalleries"
 					:key="fotoGallery.id"
@@ -41,5 +41,8 @@
 				/>
 			</div>
 		</section>
+		<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
+			<BaseButton variant="comic" link="/">&larr; Zurück</BaseButton>
+		</div>
 	</article>
 </template>
