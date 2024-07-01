@@ -1,7 +1,7 @@
 <template>
 	<article>
-		<SectionHeader class="md:hidden" />
-		<SectionHeaderDesktop class="hidden md:block" />
+		<SectionHeader />
+		<SectionHeaderDesktop />
 		<slot></slot>
 		<SectionFooter />
 	</article>

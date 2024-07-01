@@ -7,7 +7,7 @@
 </script>
 
 <template>
-	<nav class="fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2">
+	<nav class="hidden fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2 md:block">
 		<section class="max-w-[80rem] mx-auto">
 			<section class="flex !justify-between items-center px-4">
 				<NuxtLink to="/">
@@ -21,7 +21,7 @@
 						<BaseButton variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Aktuelles</p></BaseButton>
 					</li>
 					<li class="py-2">
-						<BaseButton variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Photos</p></BaseButton>
+						<BaseButton link="/fotoGallery" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Photos</p></BaseButton>
 					</li>
 					<li class="py-2">
 						<BaseButton variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Sidebar4</p></BaseButton>
