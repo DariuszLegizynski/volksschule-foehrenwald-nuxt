@@ -22,10 +22,10 @@ h3,
 
 p,
 .p {
-	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:text-[1.777rem] 2xl:leading-[2.4rem] 2xl:tracking-widest;
+	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:tracking-widest;
 }
 
 span,
 .span {
-	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:text-[1.777rem] 2xl:leading-[2.4rem] 2xl:tracking-widest;
+	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:tracking-widest;
 }

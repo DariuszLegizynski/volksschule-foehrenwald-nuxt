@@ -22,7 +22,7 @@
 <template>
 	<article class="hero-image w-screen min-h-screen">
 		<HeroLeaves />
-		<section ref="heroText" class="h-screen flex flex-col items-center justify-end pb-16">
+		<section ref="heroText" class="h-screen flex flex-col items-center justify-center py-16">
 			<div class="px-2 pb-2 bg-tertiary bg-opacity-50 xs:p-4 sm:p-16 2xl:p-12">
 				<h1 class="text-style text-shadow">Volksschule</h1>
 				<h1 class="text-style text-shadow">Föhrenwald</h1>
