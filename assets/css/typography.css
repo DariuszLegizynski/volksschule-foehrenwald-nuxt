@@ -7,25 +7,25 @@ html {
 
 h1,
 .h1 {
-	@apply text-[2.986rem] xl:text-[3.815rem] 2xl:tracking-widest 3xl:text-[7.993rem] 3xl:leading-[10rem];
+	@apply text-[2.986rem] xl:text-[3.815rem] 2xl:tracking-widest;
 }
 
 h2,
 .h2 {
-	@apply text-[2.488rem] xl:text-[3.052rem] 2xl:text-[4.209rem] 2xl:tracking-widest 3xl:text-[5.653rem];
+	@apply text-[2.488rem] xl:text-[3.052rem] 2xl:tracking-widest;
 }
 
 h3,
 .h3 {
-	@apply text-[1.728rem] xl:text-[1.953rem] 2xl:text-[2.369rem] 2xl:leading-[2.6rem] 2xl:tracking-widest 3xl:text-[2.827rem] 3xl:leading-[3.4rem];
+	@apply text-[1.728rem] xl:text-[1.953rem] 2xl:text-[2.369rem] 2xl:leading-[2.6rem] 2xl:tracking-widest;
 }
 
 p,
 .p {
-	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:text-[1.777rem] 2xl:leading-[2.2rem] 2xl:tracking-widest 3xl:text-[1.999rem];
+	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:text-[1.777rem] 2xl:leading-[2.4rem] 2xl:tracking-widest;
 }
 
 span,
 .span {
-	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:text-[1.777rem] 2xl:leading-[2.2rem] 2xl:tracking-widest 3xl:text-[1.999rem];
+	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:text-[1.777rem] 2xl:leading-[2.4rem] 2xl:tracking-widest;
 }

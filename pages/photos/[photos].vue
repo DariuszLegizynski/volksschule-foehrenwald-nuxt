@@ -23,7 +23,6 @@
 	})
 
 	const enlargeImage = (url: string) => {
-		console.log(url)
 		modalImageUrl.value = `${strapiBaseUrl}${url}`
 		isModalVisible.value = true
 	}
