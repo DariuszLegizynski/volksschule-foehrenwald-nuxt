@@ -13,7 +13,7 @@
 				<NuxtLink to="/">
 					<NuxtImg src="/images/hero/logo-1.png" alt="logo Volksschule Föhrenwald" width="6rem" height="2rem" class="w-auto h-10 pl-1" @click="hideNavbar" />
 				</NuxtLink>
-				<ul class="pl-4 flex items-center gap-x-4">
+				<ul class="pl-4 flex items-center gap-x-4 xl:gap-x-8">
 					<li class="py-2">
 						<BaseButton link="/about" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Über Uns</p></BaseButton>
 					</li>
