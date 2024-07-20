@@ -18,7 +18,7 @@ interface Format {
 	thumbnail?: FormatImage
 }
 
-export interface CoverImage {
+export interface Image {
 	alternativeText: string
 	caption: null
 	createdAt: string
@@ -40,9 +40,15 @@ export interface CoverImage {
 export interface FotoGalleryAttributes {
 	createdAt: string
 	title: string
-	coverImage: {
+	coverImage?: {
 		data: {
-			attributes: CoverImage
+			attributes: Image
+			id: number
+		}
+	}
+	images?: {
+		data: {
+			attributes: Image
 			id: number
 		}
 	}

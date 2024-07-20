@@ -32,7 +32,7 @@
 				/>
 			</section>
 			<section class="flex justify-center mt-16 md:mt-24 md:mb-24">
-				<BaseButton variant="comic"><p>Alle Neugkeiten &rarr;</p></BaseButton>
+				<BaseButton link="/news" variant="comic"><p>Alle Neugkeiten &rarr;</p></BaseButton>
 			</section>
 		</div>
 	</article>
