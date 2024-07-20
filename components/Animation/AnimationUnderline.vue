@@ -9,20 +9,14 @@
 		strokeWidth?: string
 	}
 
-	const {
-		width = "24px",
-		height = "24px",
-		stroke = "white",
-		fill = "transparent",
-		strokeWidth = "1px",
-	} = defineProps<Props>()
+	const { width = "24px", height = "24px", stroke = "white", fill = "transparent", strokeWidth = "1px" } = defineProps<Props>()
 
 	const iconRef = ref<HTMLElement | null>(null)
 	const iconPath = ref<SVGPathElement | null>(null)
 
 	onMounted(() => {
 		let path = document.querySelector("path")
-		let iconPathlength = path.getTotalLength()
+		let iconPathlength = path?.getTotalLength()
 
 		gsap.fromTo(
 			iconPath.value,
@@ -49,14 +43,7 @@
 </script>
 
 <template>
-	<svg
-		ref="iconRef"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 735.5 151.9"
-		:width="width"
-		:height="height"
-		fill="none"
-	>
+	<svg ref="iconRef" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 735.5 151.9" :width="width" :height="height" fill="none">
 		<path
 			ref="iconPath"
 			:stroke-width="strokeWidth"
@@ -67,4 +54,3 @@
 		/>
 	</svg>
 </template>
-
