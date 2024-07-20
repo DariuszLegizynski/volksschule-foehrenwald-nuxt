@@ -30,6 +30,14 @@
 		isModalVisible.value = false
 		modalImageUrl.value = ""
 	}
+
+	useHead({
+		title: fotoGallery?.title,
+		meta: [
+			{ property: "og:title", content: fotoGallery?.title },
+			{ property: "og:url", content: `${strapiBaseUrl}/photos/${route.params.slug}` },
+		],
+	})
 </script>
 
 <template>

@@ -24,6 +24,15 @@
 	})
 
 	const date = computed(() => news?.value?.createdAt?.split("T")[0])
+
+	useHead({
+		title: news?.title,
+		meta: [
+			{ property: "og:title", content: news?.title },
+			{ property: "og:image", content: `${strapiBaseUrl}${news.image?.data.attributes.formats.medium.url}` },
+			{ property: "og:url", content: `${strapiBaseUrl}/newsItem/${route.params.slug}` },
+		],
+	})
 </script>
 
 <template>
