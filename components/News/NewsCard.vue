@@ -12,7 +12,6 @@
 </script>
 
 <template>
-	{{ `/newsItem/${slug}` }}
 	<NuxtLink :to="`/newsItem/${slug}`" class="w-full py-4">
 		<NuxtImg loading="lazy" :src="imageSrc" :alt="imageAlt" width="6rem" height="8rem" class="w-full h-auto sm:object-cover sm:h-[16rem]" />
 		<div class="w-full px-2 min-h-44 md:min-h-56 2xl:min-h-72">
