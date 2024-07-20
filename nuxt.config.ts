@@ -6,11 +6,11 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		strapi: {
 			// nuxt/strapi options available server-side
-			url: process.env.STRAPI_BASE_URL || "http://localhost:1112",
+			url: process.env.STRAPI_BASE_URL,
 		},
 		public: {
 			strapi: {
-				url: process.env.STRAPI_BASE_URL || "http://localhost:1112",
+				url: process.env.STRAPI_BASE_URL,
 			},
 		},
 	},
