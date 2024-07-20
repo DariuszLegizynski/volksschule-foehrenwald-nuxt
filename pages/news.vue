@@ -1,10 +1,8 @@
 <script setup lang="ts">
-	import type { news } from "@/types/News"
+	import type { News as newsItem } from "@/types/News"
 
 	const config = useRuntimeConfig()
 	const strapiBaseUrl = config.public.strapi.url
-
-	console.log({ strapiBaseUrl })
 
 	const { find } = useStrapi()
 
@@ -13,7 +11,7 @@
 		pending,
 		error,
 	} = await useAsyncData("news", async () => {
-		const response = await find<news[]>("news", {
+		const response = await find<newsItem[]>("news", {
 			populate: ["image"],
 		})
 
@@ -28,20 +26,19 @@
 			<div v-if="pending">Loading...</div>
 			<div v-if="error">Error: {{ error.message }}</div>
 			<div v-if="news" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
-				{{ news }}
-				<!-- <PhotosCard
-					v-for="fotoGallery in fotoGalleries"
-					:key="fotoGallery.id"
-					:slug="fotoGallery.attributes?.slug"
-					:title="fotoGallery.attributes?.title || 'No Title'"
-					:shortDescription="fotoGallery.attributes?.description || 'No Description'"
+				<NewsCard
+					v-for="newsItem in news"
+					:key="newsItem.id"
+					:slug="newsItem.attributes?.slug"
+					:title="newsItem.attributes?.title || 'No Title'"
+					:shortDescription="newsItem.attributes?.description || 'No Description'"
 					:imageSrc="
-						fotoGallery.attributes?.coverImage?.data?.attributes?.formats.medium.url
-							? `${strapiBaseUrl}${fotoGallery.attributes.coverImage.data.attributes.formats.medium.url}`
+						newsItem.attributes?.image?.data?.attributes?.formats.medium.url
+							? `${strapiBaseUrl}${newsItem.attributes.image.data.attributes.formats.medium.url}`
 							: '/images/diverse/classmates-friends-bag-school-education.jpg'
 					"
-					:imageAlt="fotoGallery.attributes?.coverImage?.data?.attributes?.alternativeText || 'School children on adventure'"
-				/> -->
+					:imageAlt="newsItem.attributes?.image?.data?.attributes?.alternativeText || 'School children on adventure'"
+				/>
 			</div>
 		</section>
 		<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">

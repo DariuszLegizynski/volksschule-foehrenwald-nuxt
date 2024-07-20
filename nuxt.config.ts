@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-console.log("STRAPI_BASE_URL:", process.env.STRAPI_BASE_URL)
-
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 

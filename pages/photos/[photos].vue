@@ -5,8 +5,6 @@
 	const config = useRuntimeConfig()
 	const strapiBaseUrl = config.public.strapi.url
 
-	console.log({ strapiBaseUrl })
-
 	const route = useRoute()
 	const slug = route.params.photos as string
 
@@ -32,8 +30,6 @@
 		isModalVisible.value = false
 		modalImageUrl.value = ""
 	}
-
-	console.log({ fotoGallery })
 </script>
 
 <template>

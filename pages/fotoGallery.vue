@@ -15,8 +15,6 @@
 			populate: ["coverImage"],
 		})
 
-		console.log(response)
-
 		return response.data
 	})
 </script>
