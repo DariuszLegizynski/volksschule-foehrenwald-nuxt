@@ -10,5 +10,6 @@
 		<SectionHeaderDesktop />
 		<slot></slot>
 		<SectionFooter />
+		<SectionContactDev />
 	</article>
 </template>
