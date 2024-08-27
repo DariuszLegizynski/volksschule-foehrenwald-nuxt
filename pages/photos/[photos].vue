@@ -49,9 +49,9 @@
 				loading="lazy"
 				v-for="image in fotoGallery?.images?.data"
 				:key="image.id"
-				:src="`${strapiBaseUrl}${image.attributes.formats.medium.url}`"
-				:alt="image.attributes.alternativeText || 'School children on adventure'"
-				@click="enlargeImage(image.attributes.url)"
+				:src="`${strapiBaseUrl}${image.attributes?.url}`"
+				:alt="image.attributes?.alternativeText || 'School children on adventure'"
+				@click="enlargeImage(image.attributes?.url)"
 			/>
 		</section>
 		<div class="pt-16 flex flex-col items-center">

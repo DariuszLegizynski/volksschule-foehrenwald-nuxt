@@ -54,8 +54,8 @@
 					:title="newsItem.attributes?.title || 'No Title'"
 					:shortDescription="newsItem.attributes?.description || 'No Description'"
 					:imageSrc="
-						newsItem.attributes?.image?.data?.attributes?.formats.medium.url
-							? `${strapiBaseUrl}${newsItem.attributes.image.data.attributes.formats.medium.url}`
+						newsItem.attributes?.image?.data?.attributes?.url
+							? `${strapiBaseUrl}${newsItem.attributes.image.data.attributes.url}`
 							: '/images/diverse/classmates-friends-bag-school-education.jpg'
 					"
 					:imageAlt="newsItem.attributes?.image?.data?.attributes?.alternativeText || 'School children on adventure'"

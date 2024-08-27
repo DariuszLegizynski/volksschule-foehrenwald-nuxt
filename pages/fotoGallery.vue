@@ -49,8 +49,8 @@
 					:title="fotoGallery.attributes?.title || 'No Title'"
 					:shortDescription="fotoGallery.attributes?.description || 'No Description'"
 					:imageSrc="
-						fotoGallery.attributes?.coverImage?.data?.attributes?.formats.medium.url
-							? `${strapiBaseUrl}${fotoGallery.attributes.coverImage.data.attributes.formats.medium.url}`
+						fotoGallery.attributes?.coverImage?.data?.attributes?.url
+							? `${strapiBaseUrl}${fotoGallery.attributes.coverImage.data.attributes.url}`
 							: '/images/diverse/classmates-friends-bag-school-education.jpg'
 					"
 					:imageAlt="fotoGallery.attributes?.coverImage?.data?.attributes?.alternativeText || 'School children on adventure'"
