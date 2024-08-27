@@ -29,7 +29,7 @@
 		title: news?.title,
 		meta: [
 			{ property: "og:title", content: news?.title },
-			{ property: "og:image", content: `${strapiBaseUrl}${news.image?.data.attributes.formats.medium.url}` },
+			{ property: "og:image", content: `${strapiBaseUrl}${news.image?.data.attributes.url}` },
 			{ property: "og:url", content: `${strapiBaseUrl}/newsItem/${route.params.slug}` },
 		],
 	})
@@ -45,10 +45,10 @@
 				<span>{{ date }}</span>
 			</div>
 			<NuxtImg
-				class="py-2 cursor-pointer"
+				class="py-2 cursor-pointer mx-auto sm:w-3/4 lg:w-2/3"
 				:key="news.image?.data.id"
 				loading="lazy"
-				:src="`${strapiBaseUrl}${news.image?.data.attributes.formats.medium.url}`"
+				:src="`${strapiBaseUrl}${news.image?.data.attributes?.url}`"
 				:alt="news.image?.data.attributes.alternativeText || 'School children on adventure'"
 			/>
 			<p class="z-10 text-center pt-4" v-html="news?.content?.map(item => item.children.map(child => child.text).join('')).join('')"></p>
