@@ -18,7 +18,7 @@
 						<BaseButton link="/about" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Über Uns</p></BaseButton>
 					</li>
 					<li class="py-2">
-						<BaseButton variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Aktuelles</p></BaseButton>
+						<BaseButton link="/news" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Aktuelles</p></BaseButton>
 					</li>
 					<li class="py-2">
 						<BaseButton link="/fotoGallery" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Photos</p></BaseButton>

@@ -104,7 +104,7 @@
 				</ul>
 			</div>
 			<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
-				<BaseButton variant="comic-white">&larr; Zurück</BaseButton>
+				<BaseButton link="/#about-us" variant="comic-white">&larr; Zurück</BaseButton>
 			</div>
 		</section>
 	</article>
