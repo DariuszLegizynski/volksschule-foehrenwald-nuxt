@@ -1,4 +1,20 @@
 <script setup lang="ts">
+	useHead({
+		title: "Unsere Abenteuer - Volksschule Föhrenwald in Wiener Neustadt",
+		meta: [
+			{
+				name: "description",
+				content: "Entdecken Sie unsere Foto-Galerie mit spannenden Bildern unserer Abenteuer und Veranstaltungen.",
+			},
+			{ name: "keywords", content: "Foto-Galerie, Abenteuer, Volksschule, Föhrenwald, Wiener Neustadt, Schule, Veranstaltungen" },
+			{ property: "og:title", content: "Unsere Abenteuer - Volksschule Föhrenwald in Wiener Neustadt" },
+			{ property: "og:description", content: "Entdecken Sie unsere Foto-Galerie mit spannenden Bildern unserer Abenteuer und Veranstaltungen." },
+			{ property: "og:image", content: "/images/galleries/og-image.jpg" },
+			{ property: "og:url", content: "https://www.xn--volksschule-fohrenwald-tec.at/gallery" },
+		],
+		link: [{ rel: "canonical", href: "https://www.xn--volksschule-fohrenwald-tec.at/gallery" }],
+	})
+
 	import type { FotoGallery } from "@/types/Fotos"
 
 	const config = useRuntimeConfig()
