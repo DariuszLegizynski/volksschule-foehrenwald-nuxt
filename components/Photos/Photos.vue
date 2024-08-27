@@ -31,7 +31,7 @@
 </script>
 
 <template>
-	<article class="px-2 py-16 bg-primary">
+	<article id="photos" class="px-2 py-16 bg-primary">
 		<div class="centered-container">
 			<section class="pb-8 pl-4 md:pb-16">
 				<h2 class="text-white">Unsere Abenteuer</h2>
