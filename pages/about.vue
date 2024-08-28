@@ -1,27 +1,19 @@
 <script setup lang="ts">
-	useHead({
-		title: "Über uns - Volksschule Föhrenwald in Wiener Neustadt",
-		meta: [
-			{
-				name: "description",
-				content:
-					"Erfahren Sie mehr über das engagierte Team der Volksschule Föhrenwald in Wiener Neustadt und unsere Leidenschaft für das Lernen und die Entwicklung unserer Kinder.",
-			},
-			{ name: "keywords", content: "Über uns, Team, Lehrer, Volksschule, Föhrenwald, Wiener Neustadt, Bildung" },
-			{ property: "og:title", content: "Über uns - Volksschule Föhrenwald in Wiener Neustadt" },
-			{
-				property: "og:description",
-				content:
-					"Erfahren Sie mehr über das engagierte Team der Volksschule Föhrenwald in Wiener Neustadt und unsere Leidenschaft für das Lernen und die Entwicklung unserer Kinder.",
-			},
-			{ property: "og:image", content: "/images/about/hero-image.jpg" },
-			{ property: "og:url", content: "https://www.xn--volksschule-fohrenwald-tec.at/about" },
-		],
-		link: [{ rel: "canonical", href: "https://www.xn--volksschule-fohrenwald-tec.at/about" }],
-	})
-
+	import type { AboutUsAttributes } from "@/types/AboutUsPage"
 	import gsap from "gsap"
 	let mm = gsap.matchMedia()
+
+	const { findOne } = useStrapi()
+
+	const { data: aboutUs } = await useAsyncData("about-us", async () => {
+		const response = await findOne<AboutUsAttributes>("about-us", {
+			populate: ["about-us", "content", "team", "kids"],
+		})
+
+		return response.data.attributes
+	})
+
+	console.log({ aboutUs })
 
 	const teachers = [
 		{ link: "/images/about/teacher/Ulrike_Menitz_BEd_Direktorin.jpg", alternativeText: "nice looking teacher" },
@@ -68,6 +60,27 @@
 			})
 		})
 	})
+
+	useHead({
+		title: "Über uns - Volksschule Föhrenwald in Wiener Neustadt",
+		meta: [
+			{
+				name: "description",
+				content:
+					"Erfahren Sie mehr über das engagierte Team der Volksschule Föhrenwald in Wiener Neustadt und unsere Leidenschaft für das Lernen und die Entwicklung unserer Kinder.",
+			},
+			{ name: "keywords", content: "Über uns, Team, Lehrer, Volksschule, Föhrenwald, Wiener Neustadt, Bildung" },
+			{ property: "og:title", content: "Über uns - Volksschule Föhrenwald in Wiener Neustadt" },
+			{
+				property: "og:description",
+				content:
+					"Erfahren Sie mehr über das engagierte Team der Volksschule Föhrenwald in Wiener Neustadt und unsere Leidenschaft für das Lernen und die Entwicklung unserer Kinder.",
+			},
+			{ property: "og:image", content: "/images/about/hero-image.jpg" },
+			{ property: "og:url", content: "https://www.xn--volksschule-fohrenwald-tec.at/about" },
+		],
+		link: [{ rel: "canonical", href: "https://www.xn--volksschule-fohrenwald-tec.at/about" }],
+	})
 </script>
 
 <template>
@@ -104,7 +117,7 @@
 				</ul>
 			</div>
 			<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
-				<BaseButton link="/#about-us" variant="comic-white">&larr; Zurück</BaseButton>
+				<BaseButton link="/#about-us" variant="comic-white">&larr; {{ aboutUs?.btn }}</BaseButton>
 			</div>
 		</section>
 	</article>
