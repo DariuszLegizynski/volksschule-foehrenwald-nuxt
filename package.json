@@ -20,6 +20,8 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.11.4"
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@types/node": "^22.5.1",
+    "typescript": "^5.5.4"
   }
 }

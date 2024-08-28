@@ -1,4 +1,29 @@
 <script setup lang="ts">
+	import type { LandingPageAttributes } from "@/types/LandingPage"
+	const { findOne } = useStrapi()
+
+	const { data: landingPage } = await useAsyncData("landing-page", async () => {
+		const response = await findOne<LandingPageAttributes>("landing-page", {
+			populate: [
+				"hero",
+				"hero.background_media",
+				"hero.btn_left",
+				"hero.btn_right",
+				"about_us",
+				"about_us.features",
+				"about_us.btn",
+				"news",
+				"news.content",
+				"news.btn",
+				"foto_gallery",
+				"foto_gallery.content",
+				"foto_gallery.btn",
+			],
+		})
+
+		return response.data.attributes
+	})
+
 	useHead({
 		title: "Startseite - Volksschule Föhrenwald",
 		meta: [
@@ -14,8 +39,8 @@
 </script>
 
 <template>
-	<Hero />
-	<AboutUs />
-	<News />
-	<Photos />
+	<Hero :hero="landingPage?.hero" />
+	<AboutUs :aboutUs="landingPage?.about_us" />
+	<News :newsContent="landingPage?.news" />
+	<Photos :fotos="landingPage?.foto_gallery" />
 </template>
