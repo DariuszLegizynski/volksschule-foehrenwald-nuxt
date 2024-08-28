@@ -38,6 +38,7 @@
 				<p class="text-white pt-4">auf Bildern</p>
 			</section>
 			<div v-if="pending">Loading...</div>
+			<div v-if="newestAlbums?.length === 0 && !pending">Keine Alben gefunden</div>
 			<div v-if="error">Error: {{ error.message }}</div>
 			<section v-if="newestAlbums" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				<PhotosCard

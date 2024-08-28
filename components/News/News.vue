@@ -38,6 +38,7 @@
 				<p class="pt-4">Was bei uns los ist</p>
 			</section>
 			<div v-if="pending">Loading...</div>
+			<div v-if="newestNews?.length === 0 && !pending">Keine Neugkeiten gefunden</div>
 			<div v-if="error">Error: {{ error.message }}</div>
 			<section v-if="newestNews" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				<NewsCard
