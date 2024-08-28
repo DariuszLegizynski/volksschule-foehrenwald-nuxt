@@ -2,6 +2,13 @@ import type { Content } from "./Content"
 import type { Image } from "./Image"
 import type { Button } from "./Button"
 
+export interface Feature {
+	id: number
+	title: string
+	description: string
+	animationType: string
+}
+
 export interface Hero {
 	id?: number
 	title_up: string
@@ -22,12 +29,31 @@ export interface Contact {
 	address: string
 }
 
+export interface AboutUs {
+	id: number
+	title: string
+	features: Feature[]
+	btn: Button
+}
+
 export interface FotoGallery {
 	id: number
+	btn: Button
+	content: {
+		id: number
+		title: string
+		subtitle: string
+	}
 }
 
 export interface News {
 	id: number
+	btn: Button
+	content: {
+		id: number
+		title: string
+		subtitle: string
+	}
 }
 
 export interface LandingPageAttributes {

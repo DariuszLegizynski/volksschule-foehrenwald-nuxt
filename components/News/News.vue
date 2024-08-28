@@ -1,6 +1,14 @@
 <script setup lang="ts">
 	import type { News as newsItem } from "@/types/News"
 
+	import type { News as NewsType } from "@/types/LandingPage"
+
+	interface Props {
+		newsContent: NewsType
+	}
+
+	const { newsContent } = defineProps<Props>()
+
 	const config = useRuntimeConfig()
 	const strapiBaseUrl = config.public.strapi.url
 
@@ -34,8 +42,8 @@
 	<article id="news" class="px-2 py-16">
 		<div class="centered-container">
 			<section class="pb-8 md:pb-16">
-				<h2 class="text-primary">Neugkeiten</h2>
-				<p class="pt-4">Was bei uns los ist</p>
+				<h2 class="text-primary">{{ newsContent?.content?.title }}</h2>
+				<p class="pt-4">{{ newsContent?.content?.subtitle }}</p>
 			</section>
 			<div v-if="pending">Loading...</div>
 			<div v-if="newestNews?.length === 0 && !pending">Keine Neugkeiten gefunden</div>
@@ -56,7 +64,9 @@
 				/>
 			</section>
 			<section class="flex justify-center mt-16 md:mt-24 md:mb-24">
-				<BaseButton link="/news" variant="comic"><p>Alle Neugkeiten &rarr;</p></BaseButton>
+				<BaseButton link="/news" variant="comic"
+					><p>{{ newsContent.btn.text }} &rarr;</p></BaseButton
+				>
 			</section>
 		</div>
 	</article>

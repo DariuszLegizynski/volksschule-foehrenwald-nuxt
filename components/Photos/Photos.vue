@@ -1,6 +1,14 @@
 <script setup lang="ts">
 	import type { FotoGallery } from "@/types/Fotos"
 
+	import type { FotoGallery as FotoGalleryType } from "@/types/LandingPage"
+
+	interface Props {
+		fotos: FotoGalleryType
+	}
+
+	const { fotos } = defineProps<Props>()
+
 	const config = useRuntimeConfig()
 	const strapiBaseUrl = config.public.strapi.url
 
@@ -34,8 +42,8 @@
 	<article id="photos" class="px-2 py-16 bg-primary">
 		<div class="centered-container">
 			<section class="pb-8 pl-4 md:pb-16">
-				<h2 class="text-white">Unsere Abenteuer</h2>
-				<p class="text-white pt-4">auf Bildern</p>
+				<h2 class="text-white">{{ fotos?.content?.title }}</h2>
+				<p class="text-white pt-4">{{ fotos?.content?.subtitle }}</p>
 			</section>
 			<div v-if="pending">Loading...</div>
 			<div v-if="newestAlbums?.length === 0 && !pending">Keine Alben gefunden</div>
@@ -56,7 +64,9 @@
 				/>
 			</section>
 			<section class="flex justify-center pt-16 md:pt-32 md:pb-16">
-				<BaseButton link="/fotoGallery" variant="comic-white"><p>Alle Fotos &rarr;</p></BaseButton>
+				<BaseButton link="/fotoGallery" variant="comic-white"
+					><p>{{ fotos?.btn?.text }} &rarr;</p></BaseButton
+				>
 			</section>
 		</div>
 	</article>

@@ -1,10 +1,24 @@
 <script setup lang="ts">
-	// import type { LandingPageAttributes } from "@/types/LandingPage"
+	import type { LandingPageAttributes } from "@/types/LandingPage"
 	const { findOne } = useStrapi()
 
 	const { data: landingPage } = await useAsyncData("landing-page", async () => {
-		const response = await findOne("landing-page", {
-			populate: ["hero", "hero.background_media", "hero.btn_left", "hero.btn_right", "about_us", "news", "foto_gallery", "contact"],
+		const response = await findOne<LandingPageAttributes>("landing-page", {
+			populate: [
+				"hero",
+				"hero.background_media",
+				"hero.btn_left",
+				"hero.btn_right",
+				"about_us",
+				"about_us.features",
+				"about_us.btn",
+				"news",
+				"news.content",
+				"news.btn",
+				"foto_gallery",
+				"foto_gallery.content",
+				"foto_gallery.btn",
+			],
 		})
 
 		return response.data.attributes
@@ -27,6 +41,6 @@
 <template>
 	<Hero :hero="landingPage?.hero" />
 	<AboutUs :aboutUs="landingPage?.about_us" />
-	<News :news="landingPage?.news" />
+	<News :newsContent="landingPage?.news" />
 	<Photos :fotos="landingPage?.foto_gallery" />
 </template>
