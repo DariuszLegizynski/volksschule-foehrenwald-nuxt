@@ -1,4 +1,18 @@
 <script setup lang="ts">
+	import type { Header } from "@/types/Header"
+	const { findOne } = useStrapi()
+
+	const { data: header } = await useAsyncData("header", async () => {
+		const response = await findOne<Header>("header", {
+			populate: ["header", "header.logo", "header.header"],
+		})
+
+		return response.data.attributes.header
+	})
+
+	const config = useRuntimeConfig()
+	const strapiBaseUrl = config.public.strapi.url
+
 	const isBurgerActive = ref<boolean>(false)
 
 	const hideNavbar = () => {
@@ -11,7 +25,14 @@
 		<section class="max-w-[80rem] mx-auto">
 			<section class="flex !justify-between items-center">
 				<NuxtLink to="/">
-					<NuxtImg src="/images/hero/logo-1.png" alt="logo Volksschule Föhrenwald" width="6rem" height="2rem" class="w-auto h-10 pl-1" @click="hideNavbar" />
+					<NuxtImg
+						:src="`${strapiBaseUrl}${header?.logo?.data?.attributes?.url}`"
+						:alt="`${strapiBaseUrl}/${header?.logo?.data?.attributes?.alternativeText}` || 'logo Volksschule Föhrenwald'"
+						width="6rem"
+						height="2rem"
+						class="w-auto h-10 pl-1"
+						@click="hideNavbar"
+					/>
 				</NuxtLink>
 				<BaseBurger @click="isBurgerActive = !isBurgerActive" :active="isBurgerActive" />
 			</section>
@@ -22,14 +43,10 @@
 		:class="{ '-translate-x-full': !isBurgerActive }"
 	>
 		<ul class="pl-4 flex flex-col items-center md:flex-row">
-			<li class="py-2">
-				<BaseButton link="/about" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Über Uns</p></BaseButton>
-			</li>
-			<li class="py-2">
-				<BaseButton link="/news" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Aktuelles</p></BaseButton>
-			</li>
-			<li class="py-2">
-				<BaseButton link="/fotoGallery" variant="navbar" class="text-white font-semibold" @click="hideNavbar"><p>Photos</p></BaseButton>
+			<li class="py-2" v-for="headerLink in header?.header" :key="headerLink?.id">
+				<BaseButton :link="`/${headerLink?.link}`" variant="navbar" class="text-white font-semibold" @click="hideNavbar"
+					><p class="capitalize">{{ headerLink?.name }}</p></BaseButton
+				>
 			</li>
 		</ul>
 	</aside>
