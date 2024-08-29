@@ -89,7 +89,7 @@
 			<div class="px-4 md-centered-container">
 				<h2 class="h2 pt-20 pb-16 text-white">{{ aboutUs?.kids?.title }}</h2>
 				<ul class="grid gap-16 md:grid-cols-2">
-					<AboutUsClass v-for="classItem in aboutUs?.kids?.classes" :key="index" :classProp="classItem" />
+					<AboutUsClass v-for="classItem in aboutUs?.kids?.classes" :key="classItem.id" :classProp="classItem" />
 				</ul>
 			</div>
 			<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
