@@ -13,8 +13,6 @@
 		return response.data.attributes
 	})
 
-	console.log({ aboutUs })
-
 	const teacherRefs = ref<HTMLElement[]>([])
 
 	const assignTeacherRef = (ref: Element | ComponentPublicInstance | null) => {
