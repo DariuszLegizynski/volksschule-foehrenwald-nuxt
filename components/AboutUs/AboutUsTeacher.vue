@@ -24,7 +24,7 @@
 		<section class="pt-4 pl-4 md:pl-1 lg:pl-2">
 			<span class="font-semibold text-lg">{{ teacher?.name }}</span>
 			<br />
-			<span class="py-1 after:content-[',']">{{ teacher?.position }}</span>
+			<span class="py-1">{{ teacher?.position }}</span>
 			<br v-if="teacher?.other" />
 			<span v-if="teacher?.other">{{ teacher?.other }}</span>
 		</section>
