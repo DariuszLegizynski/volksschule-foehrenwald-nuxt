@@ -4,11 +4,13 @@
 
 	const { data: contact } = await useAsyncData("contact", async () => {
 		const response = await findOne<ContactType>("contact", {
-			populate: ["contact"],
+			populate: ["contact", "btn_privacy", "btn_impressum"],
 		})
 
 		return response.data.attributes
 	})
+
+	console.log({ contact })
 </script>
 
 <template>
@@ -35,6 +37,14 @@
 				<AnimationEmail width="2rem" height="2rem" fill="white" stroke="hsl(70, 70%, 46%)" />
 				<p>{{ contact?.email }}</p>
 			</a>
+		</section>
+		<section class="pt-16 flex flex-col items-center">
+			<BaseButton :link="contact?.btn_privacy?.link" variant="navbar" class="!text-primary"
+				><small>{{ contact?.btn_privacy?.text }}</small></BaseButton
+			>
+			<BaseButton :link="contact?.btn_impressum?.link" variant="navbar" class="!text-primary"
+				><small>{{ contact?.btn_impressum?.text }}</small></BaseButton
+			>
 		</section>
 	</footer>
 </template>
