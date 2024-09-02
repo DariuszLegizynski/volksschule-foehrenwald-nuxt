@@ -1,4 +1,5 @@
 <script setup lang="ts">
+	import { onClickOutside } from "@vueuse/core"
 	import type { Header } from "@/types/Header"
 	const { findOne } = useStrapi()
 
@@ -14,6 +15,9 @@
 	const strapiBaseUrl = config.public.strapi.url
 
 	const showNavbar = ref<boolean>(false)
+
+	const target = ref(null)
+	onClickOutside(target, event => (showNavbar.value = false))
 </script>
 
 <template>
@@ -40,6 +44,7 @@
 								<BaseButton
 									v-for="subLink in headerLink.subHeader"
 									:key="subLink.id"
+									ref="target"
 									:link="`/${subLink.link}`"
 									@click="showNavbar = false"
 									variant="navbar"
