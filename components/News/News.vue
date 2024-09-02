@@ -65,7 +65,7 @@
 			</section>
 			<section class="flex justify-center mt-16 md:mt-24 md:mb-24">
 				<BaseButton link="/news" variant="comic"
-					><p>{{ newsContent.btn.text }} &rarr;</p></BaseButton
+					><p>{{ newsContent?.btn?.text }} &rarr;</p></BaseButton
 				>
 			</section>
 		</div>
