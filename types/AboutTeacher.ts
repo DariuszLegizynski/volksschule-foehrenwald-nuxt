@@ -15,7 +15,7 @@ interface Team {
 	teachers: Teacher[]
 }
 
-export interface AboutUsAttributes {
+export interface AboutUsTeacher {
 	createdAt: string
 	publishedAt: string
 	updatedAt: string
@@ -26,9 +26,4 @@ export interface AboutUsAttributes {
 		title: string
 	}
 	btn: Button
-}
-
-export interface AboutUsTeacher {
-	attributes: AboutUsAttributes
-	id: number
 }

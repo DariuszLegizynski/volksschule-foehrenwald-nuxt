@@ -14,7 +14,7 @@ export interface Kids {
 	classes: Class[]
 }
 
-export interface AboutUsAttributes {
+export interface AboutUsClasses {
 	createdAt: string
 	publishedAt: string
 	updatedAt: string
@@ -25,9 +25,4 @@ export interface AboutUsAttributes {
 		title: string
 	}
 	btn: Button
-}
-
-export interface AboutUsClasses {
-	attributes: AboutUsAttributes
-	id: number
 }
