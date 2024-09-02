@@ -17,7 +17,7 @@
 	const showNavbar = ref<boolean>(false)
 
 	const target = ref(null)
-	onClickOutside(target, event => (showNavbar.value = false))
+	onClickOutside(target, () => (showNavbar.value = false))
 </script>
 
 <template>
@@ -40,11 +40,10 @@
 								{{ headerLink.name }}
 								<BaseIcons type="rarr" fill="white" width="1.4rem" height="1.4rem" :rotation="showNavbar ? true : false" />
 							</div>
-							<div v-if="showNavbar" class="absolute top-[51.5px] left-1 flex flex-col bg-white bg-opacity-90 px-3">
+							<div v-if="showNavbar" ref="target" class="absolute top-[51.5px] left-1 flex flex-col bg-white bg-opacity-90 px-3">
 								<BaseButton
 									v-for="subLink in headerLink.subHeader"
 									:key="subLink.id"
-									ref="target"
 									:link="`/${subLink.link}`"
 									@click="showNavbar = false"
 									variant="navbar"
@@ -60,7 +59,7 @@
 								:key="headerItem.id"
 								:link="`/${headerItem?.link}`"
 								variant="navbar"
-								class="text-white capitalize"
+								class="text-white capitalize pr-2.5"
 								>{{ headerItem?.name }}</BaseButton
 							>
 						</template>
