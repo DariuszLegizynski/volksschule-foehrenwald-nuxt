@@ -4,10 +4,10 @@
 
 	const { data: header } = await useAsyncData("header", async () => {
 		const response = await findOne<Header>("header", {
-			populate: ["header", "header.logo", "header.header"],
+			populate: ["headers.header", "logo", "headers.subHeader"],
 		})
 
-		return response.data.attributes.header
+		return response.data.attributes
 	})
 
 	const config = useRuntimeConfig()
@@ -18,10 +18,12 @@
 	const hideNavbar = () => {
 		isBurgerActive.value = false
 	}
+
+	const showNavbar = ref<boolean>(false)
 </script>
 
 <template>
-	<nav class="fixed top-0 w-full bg-primary bg-opacity-50 z-10 py-2 md:hidden">
+	<nav class="fixed top-0 w-full bg-primary bg-opacity-60 z-10 py-2 md:hidden">
 		<section class="max-w-[80rem] mx-auto">
 			<section class="flex !justify-between items-center">
 				<NuxtLink to="/">
@@ -39,14 +41,39 @@
 		</section>
 	</nav>
 	<aside
-		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-50 w-full py-4 z-10 md:hidden"
+		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-60 w-full z-10 md:hidden"
 		:class="{ '-translate-x-full': !isBurgerActive }"
 	>
-		<ul class="pl-4 flex flex-col items-center md:flex-row">
-			<li class="py-2" v-for="headerLink in header?.header" :key="headerLink?.id">
-				<BaseButton :link="`/${headerLink?.link}`" variant="navbar" class="text-white font-semibold" @click="hideNavbar"
-					><p class="capitalize">{{ headerLink?.name }}</p></BaseButton
-				>
+		<ul class="relative pl-4 flex flex-col items-start gap-x-4 xl:gap-x-8">
+			<li class="flex flex-col gap-x-4" v-for="headerLink in header?.headers" :key="headerLink?.id">
+				<template v-if="headerLink.subHeader">
+					<div @click="showNavbar = !showNavbar" class="a flex items-center text-white pb-2">
+						{{ headerLink.name }}
+						<BaseIcons type="rarr" fill="white" width="1.4rem" height="1.4rem" :rotation="showNavbar ? true : false" />
+					</div>
+					<div v-if="showNavbar" class="flex flex-col pl-8">
+						<BaseButton
+							v-for="subLink in headerLink.subHeader"
+							:key="subLink.id"
+							:link="`/${subLink.link}`"
+							@click="showNavbar = false"
+							variant="navbar"
+							class="py-1.5 capitalize flex items-center justify-between gap-x-4 pb-2"
+							>{{ subLink.name }}
+							<BaseIcons type="rlink" fill="white" stroke="white" width="1.4rem" height="1.4rem" />
+						</BaseButton>
+					</div>
+				</template>
+				<template v-else>
+					<BaseButton
+						v-for="headerItem in headerLink.header"
+						:key="headerItem.id"
+						:link="`/${headerItem?.link}`"
+						variant="navbar"
+						class="text-white capitalize pb-2"
+						>{{ headerItem?.name }}</BaseButton
+					>
+				</template>
 			</li>
 		</ul>
 	</aside>

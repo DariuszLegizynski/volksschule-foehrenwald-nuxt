@@ -19,7 +19,7 @@
 		}
 
 		if (variant.value === "navbar") {
-			return "bg-transparent text-tertiary transition ease-in-out pointer hover:text-white"
+			return "bg-transparent text-tertiary transition ease-in-out pointer text-white capitalize"
 		}
 
 		if (variant.value === "comic") {

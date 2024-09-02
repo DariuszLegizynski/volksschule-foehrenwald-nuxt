@@ -5,12 +5,27 @@
 		height?: string
 		fill?: string
 		stroke?: string
+		rotation?: boolean
 	}
 
-	const { width = "24px", height = "24px", fill = "white", stroke = "black" } = defineProps<Props>()
+	const { width = "24px", height = "24px", fill = "white", stroke = "black", rotation = false } = defineProps<Props>()
 </script>
 
 <template>
+	<svg v-if="type === 'rlink'" :width="width" :height="height" :stroke="stroke" :fill="fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+		<path d="M3 12h18m-3 3 3-3-3-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+	</svg>
+	<svg
+		v-if="type === 'rarr'"
+		xmlns="http://www.w3.org/2000/svg"
+		:width="width"
+		:height="height"
+		:fill="fill"
+		viewBox="0 0 24 24"
+		:class="`${rotation ? 'rotate-90' : 'rotate-0'} transition-transform`"
+	>
+		<path stroke="{strokeColor}" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10 7 5 5-5 5" />
+	</svg>
 	<svg v-if="type === 'close'" :width="width" :height="height" xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 8 8">
 		<path :fill="fill" fill-rule="evenodd" d="M5.6 3.5 8 5.6 6.4 7 4 4.9 1.6 7 0 5.6l2.4-2.1L0 1.4 1.6 0 4 2.1 6.4 0 8 1.4z" />
 	</svg>

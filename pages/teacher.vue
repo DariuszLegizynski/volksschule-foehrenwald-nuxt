@@ -1,13 +1,13 @@
 <script setup lang="ts">
-	import type { AboutUsAttributes } from "@/types/AboutUsPage"
+	import type { AboutUsTeacher } from "@/types/AboutTeacher"
 	import gsap from "gsap"
 	let mm = gsap.matchMedia()
 
 	const { findOne } = useStrapi()
 
-	const { data: aboutUs } = await useAsyncData("about-us", async () => {
-		const response = await findOne<AboutUsAttributes>("about-us", {
-			populate: ["about-us", "content", "team", "team.title", "team.teachers", "team.teachers.profile", "kids", "kids.classes", "kids.classes.foto"],
+	const { data: teacherData } = await useAsyncData("about-teacher", async () => {
+		const response = await findOne<AboutUsTeacher>("about-teacher", {
+			populate: ["content", "team", "team.title", "team.teachers", "team.teachers.profile", "btn"],
 		})
 
 		return response.data.attributes
@@ -71,71 +71,21 @@
 <template>
 	<article class="mt-32 overflow-hidden">
 		<section class="px-4 md-centered-container">
-			<div class="pb-16 text-primary">
-				<div class="h3">{{ aboutUs?.content?.title_up }}</div>
-				<div class="h3">{{ aboutUs?.content?.title_down }}</div>
+			<div class="pb-16 text-primary text-center">
+				<div class="h3">{{ teacherData?.content?.title }}</div>
 			</div>
 			<p class="max-w-[39rem] mx-auto">
-				{{ aboutUs?.content?.description }}
+				{{ teacherData?.content?.description }}
 			</p>
 		</section>
-		<section class="grid pb-32 px-4 md:px-1 md-centered-container lg:px-4">
-			<h2 class="pt-16 pb-8 text-primary">{{ aboutUs?.team?.title }}</h2>
+		<section id="team" class="grid pb-32 px-4 md:px-1 md-centered-container lg:px-4">
+			<h2 class="pt-16 pb-8 text-primary text-center">{{ teacherData?.team?.title }}</h2>
 			<ul id="teacher" class="flex gap-x-8 overflow-x-auto overflow-y-hidden min-h-fit py-12 md:grid md:grid-cols-4 md:overflow-x-hidden">
-				<AboutUsTeacher v-for="teacher in aboutUs?.team?.teachers" :key="teacher?.id" :teacher="teacher" :assignRef="assignTeacherRef" />
+				<AboutUsTeacher v-for="teacher in teacherData?.team?.teachers" :key="teacher?.id" :teacher="teacher" :assignRef="assignTeacherRef" />
 			</ul>
 		</section>
-		<section class="bg-primary pb-16">
-			<div class="px-4 md-centered-container">
-				<h2 class="h2 pt-20 pb-16 text-white">{{ aboutUs?.kids?.title }}</h2>
-				<ul class="grid gap-16 md:grid-cols-2">
-					<AboutUsClass v-for="classItem in aboutUs?.kids?.classes" :key="classItem.id" :classProp="classItem" />
-				</ul>
-			</div>
-			<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
-				<BaseButton link="/#about-us" variant="comic-white">&larr; {{ aboutUs?.btn }}</BaseButton>
-			</div>
-		</section>
+		<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
+			<BaseButton link="/#about-us" variant="comic-white">&larr; {{ teacherData?.btn?.text }}</BaseButton>
+		</div>
 	</article>
 </template>
-
-<style>
-	.md-centered-container {
-		@apply md:flex md:flex-col md:items-center md:max-w-[80rem] md:mx-auto;
-	}
-	#teacher > :nth-child(even) {
-		@apply mt-10;
-	}
-	ul > * {
-		scrollbar-width: thin;
-		scrollbar-color: hsl(70, 50%, 31%) #dfe9eb;
-	}
-	ul::-webkit-scrollbar {
-		width: 10px;
-	}
-	ul::-webkit-scrollbar-track {
-		border-radius: 5px;
-		background-color: hsl(70, 70%, 46%);
-	}
-
-	ul::-webkit-scrollbar-track:hover {
-		background-color: hsl(70, 70%, 46%);
-	}
-
-	ul::-webkit-scrollbar-track:active {
-		background-color: hsl(70, 70%, 46%);
-	}
-
-	ul::-webkit-scrollbar-thumb {
-		border-radius: 5px;
-		background-color: hsl(70, 50%, 31%);
-	}
-
-	ul::-webkit-scrollbar-thumb:hover {
-		background-color: hsl(70, 50%, 31%);
-	}
-
-	ul::-webkit-scrollbar-thumb:active {
-		background-color: hsl(70, 50%, 31%);
-	}
-</style>
