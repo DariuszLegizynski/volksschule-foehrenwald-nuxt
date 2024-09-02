@@ -38,7 +38,7 @@
 			<div class="pb-16 text-primary text-center">
 				<div class="h3">{{ classesData?.content?.title }}</div>
 			</div>
-			<p class="text-center">
+			<p class="text-center pb-16">
 				{{ classesData?.content?.description }}
 			</p>
 		</section>
