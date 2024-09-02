@@ -106,7 +106,6 @@
 						start: "top 600px",
 						end: "top top",
 						scrub: 2,
-						markers: true,
 					},
 				})
 			})
