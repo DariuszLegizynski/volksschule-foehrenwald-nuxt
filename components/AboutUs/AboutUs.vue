@@ -11,7 +11,7 @@
 <template>
 	<article id="about-us" class="relative z-1 bg-white flex flex-col items-center text-primary py-16 px-4 gap-y-8">
 		<div class="centered-container">
-			<h2 class="pt-4 pb-12">{{ aboutUs?.title }}</h2>
+			<h2 class="pt-4 pb-12 text-center">{{ aboutUs?.title }}</h2>
 			<section class="grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:gap-x-8">
 				<section class="pb-16" v-for="feature in aboutUs?.features" :key="feature.id">
 					<div class="flex flex-col items-center pb-12">
