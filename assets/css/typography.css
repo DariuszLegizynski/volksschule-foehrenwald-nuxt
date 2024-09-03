@@ -20,6 +20,12 @@ h3,
 	@apply text-[1.728rem] xl:text-[1.953rem] 2xl:text-[2.369rem] 2xl:leading-[2.6rem] 2xl:tracking-widest;
 }
 
+/* h4 is only used for privacy policy and immpressum */
+h4,
+.h4 {
+	@apply pb-4 text-[1.266rem] xl:text-[1.44rem] 2xl:text-[1.563rem] 2xl:leading-[1.6rem] 2xl:tracking-widest;
+}
+
 a,
 .a {
 	@apply text-[1.2rem] leading-8 xl:text-[1.25rem] 2xl:tracking-widest;
@@ -32,5 +38,5 @@ p,
 
 span,
 .span {
-	@apply text-[1.2rem] leading-8 xl:text-[1.563rem] 2xl:tracking-widest;
+	@apply text-[0.8rem] leading-6;
 }

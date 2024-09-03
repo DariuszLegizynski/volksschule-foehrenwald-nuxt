@@ -55,7 +55,7 @@
 			/>
 		</section>
 		<div class="pt-16 flex flex-col items-center">
-			<BaseButton variant="comic" link="/fotoGallery">&larr; Zurück</BaseButton>
+			<BaseButton variant="comic" link="/fotoGallery"><p>&larr; Zurück</p></BaseButton>
 		</div>
 
 		<section v-if="isModalVisible" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-10" @click="closeModal">

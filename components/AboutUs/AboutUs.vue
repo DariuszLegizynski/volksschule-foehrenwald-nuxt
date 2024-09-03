@@ -26,7 +26,7 @@
 				</section>
 			</section>
 		</div>
-		<BaseButton class="mt-8" link="/about" variant="comic"
+		<BaseButton class="mt-8" :link="aboutUs?.btn?.link" variant="comic"
 			><p>{{ aboutUs?.btn?.text }} &rarr;</p></BaseButton
 		>
 	</article>

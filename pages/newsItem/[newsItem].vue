@@ -53,7 +53,7 @@
 			/>
 			<p class="z-10 text-center pt-4" v-html="news?.content?.map(item => item.children.map(child => child.text).join('')).join('')"></p>
 			<div class="pt-16 flex flex-col items-center">
-				<BaseButton variant="comic" link="/news">&larr; Zurück</BaseButton>
+				<BaseButton variant="comic" link="/news"><p>&larr; Zurück</p></BaseButton>
 			</div>
 		</section>
 	</article>

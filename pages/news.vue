@@ -63,7 +63,7 @@
 			</div>
 		</section>
 		<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
-			<BaseButton variant="comic" link="/#news">&larr; Zurück</BaseButton>
+			<BaseButton variant="comic" link="/#news"><p>&larr; Zurück</p></BaseButton>
 		</div>
 	</article>
 </template>

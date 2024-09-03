@@ -9,15 +9,13 @@
 
 		return response.data.attributes
 	})
-
-	console.log({ contact })
 </script>
 
 <template>
-	<footer class="px-4 py-16 centered-container">
+	<footer id="contact" class="px-4 py-16 centered-container">
 		<h2 class="pb-8 xxs:hidden text-primary after:content-[':']">{{ contact?.title_small_screen }}</h2>
 		<h2 class="pb-8 hidden xxs:block text-primary text-center lg:pb-16 xl:pb-24 xl:pt-24 after:content-[':']">{{ contact?.title_larger_screen }}</h2>
-		<section class="grid grid-cols-1 gap-y-4 w-full sm:grid-cols-2 lg:pl-32 2xl:grid-cols-4 2xl:pl-0">
+		<section class="grid grid-cols-1 gap-y-4 w-full sm:grid-cols-2 sm:pl-8 md:pl-16 lg:pl-32 2xl:grid-cols-4 2xl:pl-0">
 			<div class="flex gap-x-4 items-center">
 				<AnimationHouse width="2rem" height="2rem" fill="white" stroke="hsl(70, 70%, 46%)" />
 				<p>{{ contact?.name }}</p>
@@ -38,7 +36,7 @@
 				<p>{{ contact?.email }}</p>
 			</a>
 		</section>
-		<section class="pt-16 flex flex-col items-center">
+		<section class="pt-16 flex flex-col items-center sm:grid sm:grid-cols-2 sm:gap-x-8">
 			<BaseButton :link="contact?.btn_privacy?.link" variant="navbar" class="!text-primary"
 				><small>{{ contact?.btn_privacy?.text }}</small></BaseButton
 			>

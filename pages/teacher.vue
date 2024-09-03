@@ -85,7 +85,9 @@
 			</ul>
 		</section>
 		<div class="flex flex-col items-center pt-16 lg:mt-24 px-4">
-			<BaseButton link="/#about-us" variant="comic-white">&larr; {{ teacherData?.btn?.text }}</BaseButton>
+			<BaseButton link="/#about-us" variant="comic-white"
+				><p>&larr; {{ teacherData?.btn?.text }}</p></BaseButton
+			>
 		</div>
 	</article>
 </template>
