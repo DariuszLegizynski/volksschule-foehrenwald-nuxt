@@ -37,7 +37,7 @@
 
 <template>
 	<article class="mt-32 px-2 centered-container">
-		<h1 class="text-primary pb-16">Unsere Abenteuer</h1>
+		<h1 class="text-primary pb-16 text-center">Unsere Abenteuer</h1>
 		<section>
 			<div v-if="pending">Loading...</div>
 			<div v-if="error">Error: {{ error.message }}</div>

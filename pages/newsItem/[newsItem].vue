@@ -40,9 +40,9 @@
 		<div v-if="pending">Loading...</div>
 		<div v-if="error">Error: {{ error.message }}</div>
 		<section v-if="news">
-			<h1 class="text-primary py-16">{{ news?.title }}</h1>
-			<div class="flex justify-end py-2 text-tertiary">
-				<span>{{ date }}</span>
+			<h1 class="text-primary py-16 text-center">{{ news?.title }}</h1>
+			<div class="grid grid-cols-6 justify-items-end py-2 text-tertiary">
+				<span class="col-start-5 min-w-max">{{ date }}</span>
 			</div>
 			<NuxtImg
 				class="py-2 cursor-pointer mx-auto sm:w-3/4 lg:w-2/3"
