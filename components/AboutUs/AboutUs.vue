@@ -12,7 +12,7 @@
 	<article id="about-us" class="relative z-1 bg-white flex flex-col items-center text-primary py-16 px-4 gap-y-8">
 		<div class="centered-container">
 			<h2 class="pt-4 pb-12">{{ aboutUs?.title }}</h2>
-			<section class="lg:grid lg:grid-cols-3 lg:gap-x-8">
+			<section class="grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:gap-x-8">
 				<section class="pb-16" v-for="feature in aboutUs?.features" :key="feature.id">
 					<div class="flex flex-col items-center pb-12">
 						<AnimationFitness v-if="feature.animationType === 'animationfitness'" width="8rem" height="8rem" />
@@ -22,7 +22,7 @@
 						<div class="h3 text-center pb-2">{{ feature.title }}</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
 					</div>
-					<span class="text-black">{{ feature.description }}</span>
+					<p class="text-black text-center">{{ feature.description }}</p>
 				</section>
 			</section>
 		</div>

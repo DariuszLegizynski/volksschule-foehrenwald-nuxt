@@ -67,7 +67,7 @@
 	}
 	.text-style,
 	.text-style > p {
-		@apply text-white flex items-end;
+		@apply text-white flex justify-center items-center;
 	}
 	.hero-content > p {
 		@apply pt-2 md:pt-6;
@@ -79,7 +79,7 @@
 		@apply drop-shadow-[0px_1px_1px_rgba(0,0,0,1)];
 	}
 	.text-style {
-		@apply text-white flex items-end;
+		@apply text-white flex justify-center items-center text-center;
 	}
 	.hero-content > p {
 		@apply pt-2 md:pt-6;
