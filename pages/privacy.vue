@@ -8,8 +8,6 @@
 
 		return response.data.attributes
 	})
-
-	console.log(privacyPolicyData)
 </script>
 
 <template>
