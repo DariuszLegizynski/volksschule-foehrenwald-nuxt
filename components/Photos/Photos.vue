@@ -41,7 +41,7 @@
 <template>
 	<article id="photos" class="px-2 py-16 bg-primary">
 		<div class="centered-container">
-			<section class="pb-8 pl-4 md:pb-16">
+			<section class="pb-8 pl-4 md:pb-16 text-center">
 				<h2 class="text-white">{{ fotos?.content?.title }}</h2>
 				<p class="text-white pt-4">{{ fotos?.content?.subtitle }}</p>
 			</section>
