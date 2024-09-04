@@ -14,12 +14,18 @@
 	const strapiBaseUrl = config.public.strapi.url
 
 	const isBurgerActive = ref<boolean>(false)
+	const showNavbar = ref<boolean>(false)
 
 	const hideNavbar = () => {
 		isBurgerActive.value = false
+		showNavbar.value = false
 	}
 
-	const showNavbar = ref<boolean>(false)
+	const target = ref(null)
+	onClickOutside(target, () => {
+		showNavbar.value = false
+		isBurgerActive.value = false
+	})
 </script>
 
 <template>
@@ -40,7 +46,9 @@
 			</section>
 		</section>
 	</nav>
+
 	<aside
+		ref="target"
 		class="transform transition-transform duration-500 ease-in-out right-0 top-16 fixed bg-primary bg-opacity-60 w-full z-10 md:hidden"
 		:class="{ '-translate-x-full': !isBurgerActive }"
 	>
@@ -56,7 +64,7 @@
 							v-for="subLink in headerLink.subHeader"
 							:key="subLink.id"
 							:link="`/${subLink.link}`"
-							@click="showNavbar = false"
+							@click="hideNavbar"
 							variant="navbar"
 							class="py-1.5 capitalize flex items-center justify-between gap-x-4 pb-2"
 							>{{ subLink.name }}
@@ -69,6 +77,7 @@
 						v-for="headerItem in headerLink.header"
 						:key="headerItem.id"
 						:link="`/${headerItem?.link}`"
+						@click="hideNavbar"
 						variant="navbar"
 						class="text-white capitalize pb-2"
 						>{{ headerItem?.name }}</BaseButton
