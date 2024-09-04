@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import type { AboutUsTeacher } from "@/types/AboutTeacher"
 	import gsap from "gsap"
-	let mm = gsap.matchMedia()
+	let mm = gsap?.matchMedia()
 
 	const { findOne } = useStrapi()
 
