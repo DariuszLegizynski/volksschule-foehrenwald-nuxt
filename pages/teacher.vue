@@ -1,7 +1,6 @@
 <script setup lang="ts">
 	import type { AboutUsTeacher } from "@/types/AboutTeacher"
 	import gsap from "gsap"
-	let mm = gsap?.matchMedia()
 
 	const { findOne } = useStrapi()
 
@@ -22,6 +21,7 @@
 	}
 
 	onMounted(() => {
+		let mm = gsap.matchMedia()
 		mm.add("(min-width: 768px)", () => {
 			teacherRefs.value.forEach((teacher, index) => {
 				const direction = index % 2 === 0 ? 1 : -1
