@@ -17,9 +17,9 @@
 					<div class="grid grid-rows-[auto_auto_auto] gap items-center justify-items-center pb-12">
 						<IllustrationPlaying v-if="feature?.illustrationType === 'illustration-playing'" width="16rem" height="16rem" />
 						<IllustrationEco v-if="feature?.illustrationType === 'illustration-eco'" width="16rem" height="16rem" />
-						<IllustrationLearning v-if="feature?.illustrationType === 'illustration-learning'" width="16rem" height="16rem" />
+						<IllustrationLearning v-if="feature?.illustrationType === 'illustration-learning'" width="13rem" height="16rem" />
 						<IllustrationAge v-if="feature?.illustrationType === 'illustration-age'" width="16rem" height="16rem" />
-						<IllustrationDigital v-if="feature?.illustrationType === 'illustration-digital'" width="16rem" height="16rem" />
+						<IllustrationDigital v-if="feature?.illustrationType === 'illustration-digital'" width="14rem" height="16rem" />
 						<IllustrationIntegration v-if="feature?.illustrationType === 'illustration-integration'" width="16rem" height="16rem" />
 						<div class="h3 text-center pb-2">{{ feature?.title }}</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
