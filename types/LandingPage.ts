@@ -6,7 +6,7 @@ export interface Feature {
 	id: number
 	title: string
 	description: string
-	animationType: string
+	illustrationType: string
 }
 
 export interface Hero {
