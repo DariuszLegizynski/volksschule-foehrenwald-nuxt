@@ -1,35 +1,5 @@
-<script setup lang="ts">
-	import gsap from "gsap"
-
-	interface Props {
-		width?: string
-		height?: string
-	}
-
-	const { width = "24px", height = "24px" } = defineProps<Props>()
-
-	const ball = ref<HTMLElement | null>(null)
-
-	onMounted(() => {
-		ball.value = document.querySelector(".ball")
-
-		const introAnim = gsap.timeline({ paused: true })
-		introAnim.from(ball.value, { y: 0, x: 0 }, 0)
-
-		const nextAnim = gsap.timeline({ paused: true })
-		nextAnim.to(ball.value, { duration: 4, y: 140, x: 140, repeat: 1, yoyo: true }, 0.5)
-
-		const fullanim = gsap.timeline({ paused: true })
-		fullanim.add(introAnim.play(), 0)
-		fullanim.add(nextAnim.repeat(-1).play(), 3)
-
-		fullanim.play()
-	})
-</script>
-
 <template>
 	<svg
-  :width="width" :height="height"
 		xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		xml:space="preserve"
