@@ -91,3 +91,44 @@
 		</div>
 	</article>
 </template>
+
+<style scoped>
+	.md-centered-container {
+		@apply md:flex md:flex-col md:items-center md:max-w-[80rem] md:mx-auto;
+	}
+	#teacher > :nth-child(even) {
+		@apply mt-10;
+	}
+	ul > * {
+		scrollbar-width: thin;
+		scrollbar-color: hsl(70, 50%, 31%) #dfe9eb;
+	}
+	ul::-webkit-scrollbar {
+		width: 10px;
+	}
+	ul::-webkit-scrollbar-track {
+		border-radius: 5px;
+		background-color: hsl(70, 70%, 46%);
+	}
+
+	ul::-webkit-scrollbar-track:hover {
+		background-color: hsl(70, 70%, 46%);
+	}
+
+	ul::-webkit-scrollbar-track:active {
+		background-color: hsl(70, 70%, 46%);
+	}
+
+	ul::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: hsl(70, 50%, 31%);
+	}
+
+	ul::-webkit-scrollbar-thumb:hover {
+		background-color: hsl(70, 50%, 31%);
+	}
+
+	ul::-webkit-scrollbar-thumb:active {
+		background-color: hsl(70, 50%, 31%);
+	}
+</style>

@@ -57,3 +57,9 @@
 		</div>
 	</article>
 </template>
+
+<style scoped>
+	.md-centered-container {
+		@apply md:flex md:flex-col md:items-center md:max-w-[80rem] md:mx-auto;
+	}
+</style>
