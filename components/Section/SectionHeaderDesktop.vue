@@ -21,7 +21,7 @@
 </script>
 
 <template>
-	<nav class="hidden fixed top-0 w-full bg-primary bg-opacity-60 z-10 py-1 pr-4 md:block">
+	<nav ref="target" class="hidden fixed top-0 w-full bg-primary bg-opacity-60 z-10 py-1 pr-4 md:block">
 		<section class="mx-auto max-w-[80rem] 2xl:max-w-[96rem]">
 			<section class="flex !justify-between items-center px-4">
 				<NuxtLink @click="showNavbar = false" to="/">
@@ -40,7 +40,7 @@
 								{{ headerLink.name }}
 								<BaseIcons type="rarr" fill="white" width="1.4rem" height="1.4rem" :rotation="showNavbar ? true : false" />
 							</div>
-							<div v-if="showNavbar" ref="target" class="absolute top-[51.5px] left-1 flex flex-col bg-white bg-opacity-90 px-3">
+							<div v-if="showNavbar" class="absolute top-[51.5px] left-1 flex flex-col bg-white bg-opacity-90 px-3">
 								<BaseButton
 									v-for="subLink in headerLink.subHeader"
 									:key="subLink.id"
