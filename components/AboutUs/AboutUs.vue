@@ -24,7 +24,7 @@
 						<div class="h3 text-center pb-2">{{ feature?.title }}</div>
 						<AnimationUnderline height="36px" stroke="hsl(70, 70%, 46%)" fill="hsl(70, 70%, 46%)" stroke-width="8px" />
 					</div>
-					<p class="text-black text-center max-w-[40rem]">{{ feature?.description }}</p>
+					<p class="text-black text-start max-w-[40rem]">{{ feature?.description }}</p>
 				</section>
 			</section>
 		</div>
