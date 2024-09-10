@@ -29,7 +29,7 @@
 
 <template>
 	<article
-		class="hero-image w-dvw min-h-dvh"
+		class="hero-image w-full min-h-dvh"
 		:style="{
 			backgroundImage: `url(${strapiBaseUrl}${hero?.background_media?.data?.attributes?.url})`,
 		}"
