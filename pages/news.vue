@@ -42,7 +42,7 @@
 
 <template>
 	<article class="mt-32 px-2 centered-container">
-		<h1 class="text-primary pb-16">Neugkeiten</h1>
+		<h1 class="text-primary pb-16">Neuigkeiten</h1>
 		<section>
 			<div v-if="pending">Loading...</div>
 			<div v-if="error">Error: {{ error.message }}</div>
