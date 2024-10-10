@@ -36,8 +36,6 @@
 
 		return fotoGalleriesArray
 	})
-
-	console.log({ fotos })
 </script>
 
 <template>
