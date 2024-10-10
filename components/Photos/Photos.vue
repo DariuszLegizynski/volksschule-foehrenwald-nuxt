@@ -4,7 +4,7 @@
 	import type { FotoGallery as FotoGalleryType } from "@/types/LandingPage"
 
 	interface Props {
-		fotos: FotoGalleryType
+		fotos: FotoGalleryType | null
 	}
 
 	const { fotos } = defineProps<Props>()
@@ -36,10 +36,12 @@
 
 		return fotoGalleriesArray
 	})
+
+	console.log({ fotos })
 </script>
 
 <template>
-	<article id="photos" class="px-2 py-16 bg-primary">
+	<article v-if="fotos" id="photos" class="px-2 py-16 bg-primary">
 		<div class="centered-container">
 			<section class="pb-8 pl-4 md:pb-16 text-center">
 				<h2 class="text-white">{{ fotos?.content?.title }}</h2>
@@ -70,4 +72,5 @@
 			</section>
 		</div>
 	</article>
+	<article v-else class="hidden" />
 </template>
