@@ -11,5 +11,6 @@
 		<slot></slot>
 		<SectionFooter />
 		<SectionContactDev />
+		<ConsentBanner />
 	</article>
 </template>
