@@ -28,7 +28,7 @@ h4,
 
 a,
 .a {
-	@apply text-[1.2rem] leading-8 xl:text-[1.25rem] 2xl:tracking-widest;
+	@apply text-[1.2rem] leading-8 xl:text-[1.25rem] 2xl:tracking-widest cursor-pointer;
 }
 
 p,
